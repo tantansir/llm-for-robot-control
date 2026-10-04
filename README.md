@@ -12,7 +12,7 @@ This repository accompanies the survey *From Planner to Policy*. The survey revi
 
 ## Paper list
 
-Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its representation, **Operator** how it combines with other controllers, and **Timing** when the model is called. Year is the first public version. Entries marked † do not use a language model and serve as reference points. Missing a paper? Please open an issue or a pull request.
+Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its representation, **Operator** how it combines with other controllers, and **Timing** when the model is called. Year is the first public version. Entries marked † are reference points whose deciding component is neither a language model nor a VLA (value functions, feature-based monitors, residual learners, video world models). Missing a paper? Please open an issue or a pull request.
 
 - [Task plans](#task-plans)
 - [Tool calls and programs](#tool-calls-and-programs)
@@ -32,7 +32,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **SayCan** | 2022 | [Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691) | CoRL 2022 | Skill | Language | Command | Per subtask |
 | **Inner Monologue** | 2022 | [Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608) | CoRL 2022 | Task | Language | Command | Per subtask |
 | **Zero-shot planners** | 2022 | [Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents](https://arxiv.org/abs/2201.07207) | ICML 2022 | Task | Language | Command | Once |
-| **LLM-Planner** | 2022 | [LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models](https://arxiv.org/abs/2212.04088) | ICCV 2023 | Task | Language | Command | Once |
+| **LLM-Planner** | 2022 | [LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models](https://arxiv.org/abs/2212.04088) | ICCV 2023 | Task | Language | Command | Event |
 | **Socratic Models** | 2022 | [Socratic Models: Composing Zero-Shot Multimodal Reasoning with Language](https://arxiv.org/abs/2204.00598) | ICLR 2023 | Task | Language | Command | Once |
 | **AutoTAMP** | 2023 | [AutoTAMP: Autoregressive Task and Motion Planning with LLMs as Translators and Checkers](https://doi.org/10.1109/ICRA57147.2024.10611163) | ICRA 2024 | Objective | Structured | Specify | Once |
 | **PaLM-E** | 2023 | [PaLM-E: An Embodied Multimodal Language Model](https://arxiv.org/abs/2303.03378) | ICML 2023 | Task | Language | Command | Per subtask |
@@ -98,7 +98,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **Agent as Policy** | 2026 | [Agent as Policy for Robotic Manipulation](https://arxiv.org/abs/2609.12541) | arXiv 2026 | Motion | Tool call | Command | Per step |
 | **AgentRob** | 2026 | [AgentRob: From Virtual Forum Agents to Hijacked Physical Robots](https://arxiv.org/abs/2602.13591) | arXiv 2026 | Skill | Tool call | Command | Per step |
 | **ASPIRE** | 2026 | [ASPIRE: Agentic /Skills Discovery for Robotics](https://arxiv.org/abs/2607.00272) | arXiv 2026 | Program | Code | Command | Iterative |
-| **VLCP** | 2026 | [VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation](https://arxiv.org/abs/2608.16978) | arXiv 2026 | Program | Code | Command | Periodic |
+| **VLCP** | 2026 | [VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation](https://arxiv.org/abs/2608.16978) | arXiv 2026 | Action | Code | Command | Periodic |
 | **Contract-grounded BT synthesis** | 2026 | [Contract-Grounded Behavior Tree Synthesis via Coding Agents](https://arxiv.org/abs/2607.12220) | arXiv 2026 | Program | Tool call | Command | Once |
 | **EmbodiedSWE** | 2026 | [EmbodiedSWE: Coding Agents for Long Horizon Dexterous Robotics](https://arxiv.org/abs/2609.27308) | arXiv 2026 | Program | Code | Command | Iterative |
 | **PyRUA-Lean** | 2026 | [Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens](https://arxiv.org/abs/2610.01939) | arXiv 2026 | Program | Code | Command | Per step |
@@ -116,7 +116,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **Pattern machines** | 2023 | [Large Language Models as General Pattern Machines](https://arxiv.org/abs/2307.04721) | CoRL 2023 | Action | Numeric text | Command | Periodic |
 | **SayTap** | 2023 | [SayTap: Language to Quadrupedal Locomotion](https://arxiv.org/abs/2306.07580) | CoRL 2023 | Motion | Structured | Command | Event |
 | **Prompted walking** | 2023 | [Prompt a Robot to Walk with Large Language Models](https://doi.org/10.1109/CDC56724.2024.10885862) | CDC 2024 | Action | Numeric text | Command | Periodic |
-| **KAT** | 2024 | [Keypoint Action Tokens Enable In-Context Imitation Learning in Robotics](https://doi.org/10.15607/RSS.2024.XX.096) | RSS 2024 | Action | Numeric text | Command | Once |
+| **KAT** | 2024 | [Keypoint Action Tokens Enable In-Context Imitation Learning in Robotics](https://doi.org/10.15607/RSS.2024.XX.096) | RSS 2024 | Motion | Numeric text | Command | Once |
 | **MOKA** | 2024 | [MOKA: Open-World Robotic Manipulation through Mark-Based Visual Prompting](https://doi.org/10.15607/RSS.2024.XX.062) | RSS 2024 | Motion | Structured | Command | Per subtask |
 | **CoPa** | 2024 | [CoPa: General Robotic Manipulation through Spatial Constraints of Parts with Foundation Models](https://doi.org/10.1109/IROS58592.2024.10801352) | IROS 2024 | Motion | Language | Specify | Once |
 | **ReKep** | 2024 | [ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation](https://arxiv.org/abs/2409.01652) | CoRL 2024 | Objective | Code | Specify | Once |
@@ -124,7 +124,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **PIVOT** | 2024 | [PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs](https://arxiv.org/abs/2402.07872) | ICML 2024 | Motion | Language | Command | Per step |
 | **MALMM** | 2024 | [MALMM: Multi-Agent Large Language Models for Zero-Shot Robotic Manipulation](https://doi.org/10.1109/IROS60139.2025.11247340) | IROS 2025 | Motion | Code | Command | Per step |
 | **Wonderful Team** | 2024 | [Wonderful Team: Zero-Shot Physical Task Planning with Visual LLMs](https://arxiv.org/abs/2407.19094) | arXiv 2024 | Motion | Structured | Command | Per subtask |
-| **RoboPrompt** | 2024 | [In-Context Learning Enables Robot Action Prediction in LLMs](https://doi.org/10.1109/ICRA55743.2025.11128807) | ICRA 2025 | Action | Numeric text | Command | Once |
+| **RoboPrompt** | 2024 | [In-Context Learning Enables Robot Action Prediction in LLMs](https://doi.org/10.1109/ICRA55743.2025.11128807) | ICRA 2025 | Motion | Numeric text | Command | Once |
 | **RoboPoint** | 2024 | [RoboPoint: A Vision-Language Model for Spatial Affordance Prediction in Robotics](https://arxiv.org/abs/2406.10721) | CoRL 2024 | Motion | Numeric text | Command | Once |
 | **ECoT** | 2024 | [Robotic Control via Embodied Chain-of-Thought Reasoning](https://arxiv.org/abs/2407.08693) | CoRL 2024 | Action | Action tokens | Command | Periodic |
 | **VLA-0** | 2025 | [VLA-0: Building State-of-the-Art VLAs with Zero Modification](https://arxiv.org/abs/2510.13054) | arXiv 2025 | Action | Numeric text | Command | Periodic |
@@ -155,7 +155,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **AHA** | 2024 | [AHA: A Vision-Language-Model for Detecting and Reasoning Over Failures in Robotic Manipulation](https://arxiv.org/abs/2410.00371) | ICLR 2025 | Score | Language | Verify | Per subtask |
 | **GVL** | 2024 | [Vision Language Models are In-Context Value Learners](https://arxiv.org/abs/2411.04549) | ICLR 2025 | Score | Language | Verify | Once |
 | **V-GPS †** | 2024 | [Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance](https://arxiv.org/abs/2410.13816) | CoRL 2024 | Verdict | Scalar | Verify | Periodic |
-| **COME-robot** | 2024 | [Closed-Loop Open-Vocabulary Mobile Manipulation with GPT-4V](https://doi.org/10.1109/ICRA55743.2025.11127975) | ICRA 2025 | Verdict | Code | Command | Event |
+| **COME-robot** | 2024 | [Closed-Loop Open-Vocabulary Mobile Manipulation with GPT-4V](https://doi.org/10.1109/ICRA55743.2025.11127975) | ICRA 2025 | Verdict | Code | Verify | Event |
 | **SOAR** | 2024 | [Autonomous Improvement of Instruction Following Skills via Foundation Models](https://arxiv.org/abs/2407.20635) | CoRL 2024 | Score | Language | Monitor | Once |
 | **SAFE †** | 2025 | [SAFE: Multitask Failure Detection for Vision-Language-Action Models](https://arxiv.org/abs/2506.09937) | NeurIPS 2025 | Score | Scalar | Monitor | Periodic |
 | **RoboMonkey** | 2025 | [RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models](https://arxiv.org/abs/2506.17811) | CoRL 2025 | Verdict | Scalar | Verify | Periodic |
@@ -174,7 +174,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 |---|---|---|---|---|---|---|---|
 | **Trajectory reshaping** | 2022 | [Reshaping Robot Trajectories Using Natural Language Commands: A Study of Multi-Modal Data Alignment Using Transformers](https://doi.org/10.1109/IROS47612.2022.9981810) | IROS 2022 | Residual | Language | Correct | Event |
 | **LaTTe** | 2022 | [LATTE: LAnguage Trajectory TransformEr](https://doi.org/10.1109/ICRA48891.2023.10161068) | ICRA 2023 | Residual | Action head | Correct | Event |
-| **Interactive Language** | 2022 | [Interactive Language: Talking to Robots in Real Time](https://doi.org/10.1109/LRA.2023.3295255) | RA-L 2023 | Action | Language | Command | Periodic |
+| **Interactive Language** | 2022 | [Interactive Language: Talking to Robots in Real Time](https://doi.org/10.1109/LRA.2023.3295255) | RA-L 2023 | Action | Language | Correct | Periodic |
 | **Plan corrections (Sharma et al.)** | 2022 | [Correcting Robot Plans with Natural Language Feedback](https://doi.org/10.15607/RSS.2022.XVIII.065) | RSS 2022 | Objective | Language | Correct | Event |
 | **LILAC** | 2023 | [``No, to the Right'': Online Language Corrections for Robotic Manipulation via Shared Autonomy](https://doi.org/10.1145/3568162.3578623) | HRI 2023 | Residual | Language | Correct | Event |
 | **DROC** | 2023 | [Distilling and Retrieving Generalizable Knowledge for Robot Manipulation via Language Corrections](https://doi.org/10.1109/ICRA57147.2024.10610455) | ICRA 2024 | Program | Code | Correct | Event |
@@ -213,16 +213,16 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **DrEureka** | 2024 | [DrEureka: Language Model Guided Sim-To-Real Transfer](https://doi.org/10.15607/RSS.2024.XX.094) | RSS 2024 | Objective | Code | Specify | Offline |
 | **RL-VLM-F** | 2024 | [RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback](https://arxiv.org/abs/2402.03681) | ICML 2024 | Objective | Language | Verify | Periodic |
 | **VLMPC** | 2024 | [VLMPC: Vision-Language Model Predictive Control for Robotic Manipulation](https://doi.org/10.15607/RSS.2024.XX.106) | RSS 2024 | Score | Language | Propose | Periodic |
-| **V-JEPA 2 †** | 2025 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | arXiv 2025 | Prediction | Images | Predict | Periodic |
+| **V-JEPA 2 †** | 2025 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | arXiv 2025 | Prediction | Latent | Predict | Periodic |
 | **WorldVLA** | 2025 | [WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539) | arXiv 2025 | Action | Action tokens | Command | Periodic |
 | **Ctrl-World** | 2025 | [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | ICLR 2026 | Prediction | Images | Predict | Offline |
 | **DreamGen** | 2025 | [DreamGen: Unlocking Generalization in Robot Learning through Video World Models](https://arxiv.org/abs/2505.12705) | CoRL 2025 | Prediction | Images | Predict | Offline |
 | **Genie Envisioner** | 2025 | [Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](https://arxiv.org/abs/2508.05635) | ICLR 2026 | Prediction | Images | Predict | Periodic |
-| **Robo-Dopamine** | 2025 | [General Process Reward Modeling for Robotic Reinforcement Learning](https://arxiv.org/abs/2512.23703) | CVPR 2026 | Score | Images | Verify | Periodic |
-| **VLAC** | 2025 | [A Vision-Language-Action-Critic Model for Robotic Real-World Reinforcement Learning](https://arxiv.org/abs/2509.15937) | arXiv 2025 | Score | Images | Verify | Periodic |
+| **Robo-Dopamine** | 2025 | [General Process Reward Modeling for Robotic Reinforcement Learning](https://arxiv.org/abs/2512.23703) | CVPR 2026 | Score | Numeric text | Specify | Periodic |
+| **VLAC** | 2025 | [A Vision-Language-Action-Critic Model for Robotic Real-World Reinforcement Learning](https://arxiv.org/abs/2509.15937) | arXiv 2025 | Score | Numeric text | Specify | Periodic |
 | **τ0-VLA** | 2026 | [τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation](https://arxiv.org/abs/2608.16885) | arXiv 2026 | Task | Language | Propose | Event |
-| **RoboReward** | 2026 | [RoboReward: General-Purpose Vision-Language Reward Models for Robotics](https://arxiv.org/abs/2601.00675) | arXiv 2026 | Score | Images | Verify | Per episode |
-| **Robometer** | 2026 | [Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons](https://doi.org/10.15607/RSS.2026.XXII.140) | RSS 2026 | Score | Images | Verify | Periodic |
+| **RoboReward** | 2026 | [RoboReward: General-Purpose Vision-Language Reward Models for Robotics](https://arxiv.org/abs/2601.00675) | arXiv 2026 | Score | Numeric text | Specify | Per episode |
+| **Robometer** | 2026 | [Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons](https://doi.org/10.15607/RSS.2026.XXII.140) | RSS 2026 | Score | Scalar | Specify | Periodic |
 | **World Action Agent** | 2026 | [World Action Agent: Harnessing VLMs for Robot Manipulation via World Action Rehearsal](https://arxiv.org/abs/2609.29964) | arXiv 2026 | Motion | Tool call | Propose | Per step |
 | **World Action Planner** | 2026 | [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](https://arxiv.org/abs/2607.27599) | arXiv 2026 | Motion | Structured | Propose | Fixed points |
 
@@ -236,7 +236,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **SMART-LLM** | 2023 | [SMART-LLM: Smart Multi-Agent Robot Task Planning using Large Language Models](https://doi.org/10.1109/IROS58592.2024.10802322) | IROS 2024 | Program | Code | Command | Once |
 | **RoCo** | 2023 | [RoCo: Dialectic Multi-Robot Collaboration with Large Language Models](https://doi.org/10.1109/ICRA57147.2024.10610855) | ICRA 2024 | Task | Language | Command | Per step |
 | **Voyager (game)** | 2023 | [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291) | TMLR 2024 | Program | Code | Command | Iterative |
-| **Safety Chip** | 2023 | [Plug in the Safety Chip: Enforcing Constraints for LLM-driven Robot Agents](https://doi.org/10.1109/ICRA57147.2024.10611447) | ICRA 2024 | Skill | Language | Verify | Per step |
+| **Safety Chip** | 2023 | [Plug in the Safety Chip: Enforcing Constraints for LLM-driven Robot Agents](https://doi.org/10.1109/ICRA57147.2024.10611447) | ICRA 2024 | Objective | Formal | Specify | Per step |
 | **BOSS** | 2023 | [Bootstrap Your Own Skills: Learning to Solve New Tasks with Large Language Model Guidance](https://arxiv.org/abs/2310.10021) | CoRL 2023 | Skill | Language | Propose | Offline |
 | **CoELA** | 2023 | [Building Cooperative Embodied Agents Modularly with Large Language Models](https://arxiv.org/abs/2307.02485) | ICLR 2024 | Task | Language | Command | Per step |
 | **ReMEmbR** | 2024 | [ReMEmbR: Building and Reasoning Over Long-Horizon Spatio-Temporal Memory for Robot Navigation](https://doi.org/10.1109/ICRA55743.2025.11127706) | ICRA 2025 | Task | Tool call | Command | Per query |
@@ -249,12 +249,12 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **Mobility VLA** | 2024 | [Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs](https://arxiv.org/abs/2407.07775) | CoRL 2024 | Motion | Language | Command | Once |
 | **Reachability filter (Hafez et al.)** | 2025 | [Safe LLM-Controlled Robots with Formal Guarantees via Reachability Analysis](https://arxiv.org/abs/2503.03911) | arXiv 2025 | Action | Language | Command | Periodic |
 | **ELLMER** | 2025 | [Embodied Large Language Models Enable Robots to Complete Complex Tasks in Unpredictable Environments](https://doi.org/10.1038/s42256-025-01005-x) | Nat. Mach. Intell. 2025 | Program | Code | Command | Once |
-| **RoboGuard** | 2025 | [Safety Guardrails for LLM-Enabled Robots](https://doi.org/10.1109/LRA.2026.3667488) | RA-L 2026 | Task | Formal | Verify | Per decision |
+| **RoboGuard** | 2025 | [Safety Guardrails for LLM-Enabled Robots](https://doi.org/10.1109/LRA.2026.3667488) | RA-L 2026 | Objective | Formal | Specify | Per decision |
 | **MemoryVLA** | 2025 | [MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](https://arxiv.org/abs/2508.19236) | ICLR 2026 | Action | Action head | Command | Periodic |
 | **MemER** | 2025 | [Scaling up Memory for Robotic Control via Experience Retrieval](https://arxiv.org/abs/2510.20328) | ICLR 2026 | Task | Language | Command | Periodic |
 | **SAMALM** | 2025 | [Multi-Agent LLM Actor-Critic Framework for Social Robot Navigation](https://arxiv.org/abs/2503.09758) | arXiv 2025 | Action | Numeric text | Command | Per step |
 | **REMAC** | 2025 | [REMAC: Self-Reflective and Self-Evolving Multi-Agent Collaboration for Long-Horizon Robot Manipulation](https://doi.org/10.1016/j.patcog.2026.114831) | Pattern Recognition 2027 | Task | Language | Command | Per subtask |
-| **SafeVLA †** | 2025 | [SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](https://doi.org/10.52202/085713-5128) | NeurIPS 2025 | Action | Action tokens | Command | Per step |
+| **SafeVLA** | 2025 | [SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](https://doi.org/10.52202/085713-5128) | NeurIPS 2025 | Action | Action tokens | Command | Per step |
 | **Three-tier Astra on RoboMME** | 2026 | [Can Astra Solve RoboMME without Breaking the Bank? A Three-Tier System for Memory-Augmented Manipulation](https://bingaochen.github.io/Astra-on-RoboMME/) | GitHub 2026 | Task | Language | Command | Event |
 | **Reachability gate (Dwedar et al.)** | 2026 | [Safe Multi-Robot Coordination via VLM-LLM Reasoning and Reachability Analysis](https://arxiv.org/abs/2609.27816) | arXiv 2026 | Task | Structured | Propose | Periodic |
 | **Closed-loop multi-agent (He et al.)** | 2026 | [A Closed-Loop Multi-Agent Framework for Robust Multi-Robot Manipulation](https://doi.org/10.15607/RSS.2026.XXII.036) | RSS 2026 | Task | Structured | Command | Per subtask |
@@ -272,10 +272,10 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **Introspective planning** | 2024 | [Introspective Planning: Aligning Robots' Uncertainty with Inherent Task Ambiguity](https://arxiv.org/abs/2402.06529) | NeurIPS 2024 | Task | Language | Propose | Per step |
 | **LCB** | 2024 | [From LLMs to Actions: Latent Codes as Bridges in Hierarchical Robot Control](https://doi.org/10.1109/IROS58592.2024.10801683) | IROS 2024 | Latent | Action head | Command | Periodic |
 | **AESOP** | 2024 | [Real-Time Anomaly Detection and Reactive Planning with Large Language Models](https://doi.org/10.15607/RSS.2024.XX.114) | RSS 2024 | Verdict | Language | Monitor | Event |
-| **DeeR-VLA †** | 2024 | [DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution](https://arxiv.org/abs/2411.02359) | NeurIPS 2024 | Action | Action head | Command | Periodic |
+| **DeeR-VLA** | 2024 | [DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution](https://arxiv.org/abs/2411.02359) | NeurIPS 2024 | Action | Action head | Command | Periodic |
 | **HiRT** | 2024 | [HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers](https://arxiv.org/abs/2410.05273) | CoRL 2024 | Latent | Latent | Command | Periodic |
 | **π0.5** | 2025 | [π0.5: a Vision-Language-Action Model with Open-World Generalization](https://arxiv.org/abs/2504.16054) | CoRL 2025 | Task | Language | Command | Two rates |
-| **Real-time chunking †** | 2025 | [Real-Time Execution of Action Chunking Flow Policies](https://arxiv.org/abs/2506.07339) | NeurIPS 2025 | Action | Action head | Command | Periodic |
+| **Real-time chunking** | 2025 | [Real-Time Execution of Action Chunking Flow Policies](https://arxiv.org/abs/2506.07339) | NeurIPS 2025 | Action | Action head | Command | Periodic |
 | **Fast-in-Slow** | 2025 | [Fast-in-Slow: A Dual-System VLA Model Unifying Fast Manipulation within Slow Reasoning](https://arxiv.org/abs/2506.01953) | NeurIPS 2025 | Action | Latent | Command | Periodic |
 | **Helix** | 2025 | [Helix: A Vision-Language-Action Model for Generalist Humanoid Control](https://www.figure.ai/news/helix) | Blog 2025 | Action | Action head | Command | Periodic |
 | **Gemini Robotics** | 2025 | [Gemini Robotics: Bringing AI into the Physical World](https://arxiv.org/abs/2503.20020) | arXiv 2025 | Program | Code | Command | Per step |
@@ -284,19 +284,19 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **G0** | 2025 | [Galaxea Open-World Dataset and G0 Dual-System VLA Model](https://arxiv.org/abs/2509.00576) | arXiv 2025 | Task | Language | Command | Two rates |
 | **HAMSTER** | 2025 | [HAMSTER: Hierarchical Action Models for Open-World Robot Manipulation](https://arxiv.org/abs/2502.05485) | ICLR 2025 | Motion | Structured | Command | Once |
 | **SwitchVLA** | 2025 | [SwitchVLA: Execution-Aware Task Switching for Vision-Language-Action Models](https://arxiv.org/abs/2506.03574) | arXiv 2025 | Action | Action head | Command | Periodic |
-| **SP-VLA †** | 2025 | [SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](https://arxiv.org/abs/2506.12723) | ICLR 2026 | Action | Action tokens | Command | Event |
+| **SP-VLA** | 2025 | [SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](https://arxiv.org/abs/2506.12723) | ICLR 2026 | Action | Action tokens | Command | Event |
 | **OneTwoVLA** | 2025 | [OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](https://arxiv.org/abs/2505.11917) | ICLR 2026 | Task | Language | Command | Event |
 | **GR00T N1** | 2025 | [GR00T N1: An Open Foundation Model for Generalist Humanoid Robots](https://arxiv.org/abs/2503.14734) | arXiv 2025 | Action | Action head | Command | Periodic |
 | **SmolVLA (asynchronous)** | 2025 | [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844) | arXiv 2025 | Action | Action head | Command | Event |
 | **Hume** | 2025 | [Hume: Introducing System-2 Thinking in Visual-Language-Action Model](https://arxiv.org/abs/2505.21432) | arXiv 2025 | Verdict | Action head | Verify | Periodic |
-| **FlashVLA †** | 2025 | [Think Twice, Act Once: Token-Aware Compression and Action Reuse for Efficient Inference in Vision-Language-Action Models](https://arxiv.org/abs/2505.21200) | arXiv 2025 | Action | Action tokens | Command | Event |
+| **FlashVLA** | 2025 | [Think Twice, Act Once: Token-Aware Compression and Action Reuse for Efficient Inference in Vision-Language-Action Models](https://arxiv.org/abs/2505.21200) | arXiv 2025 | Action | Action tokens | Command | Event |
 | **FOREWARN** | 2025 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://doi.org/10.15607/RSS.2025.XXI.076) | RSS 2025 | Verdict | Language | Verify | Per decision |
 | **Agentic Robot** | 2025 | [Agentic Robot: A Brain-Inspired Framework for Vision-Language-Action Models in Embodied Agents](https://arxiv.org/abs/2505.23450) | arXiv 2025 | Task | Language | Command | Once |
 | **LoHoVLA** | 2025 | [LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks](https://arxiv.org/abs/2506.00411) | arXiv 2025 | Task | Language | Command | Event |
 | **DIRECT** | 2026 | [DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?](https://arxiv.org/abs/2606.12402) | arXiv 2026 | Task | Language | Command | Per subtask |
-| **DVAC †** | 2026 | [Denoising Tells When to Replan: Denoising-Variance Adaptive Chunking for Flow-Based Robot Policies](https://arxiv.org/abs/2606.03847) | arXiv 2026 | Action | Action head | Command | Event |
-| **AAC †** | 2026 | [Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](https://arxiv.org/abs/2604.04161) | CVPR 2026 | Action | Action head | Command | Event |
-| **BCP †** | 2026 | [Continue or Replan? Bernoulli-Continuation Policy Learning for Adaptive Horizon Execution](https://arxiv.org/abs/2608.03483) | arXiv 2026 | Action | Action head | Command | Event |
+| **DVAC** | 2026 | [Denoising Tells When to Replan: Denoising-Variance Adaptive Chunking for Flow-Based Robot Policies](https://arxiv.org/abs/2606.03847) | arXiv 2026 | Action | Action head | Command | Event |
+| **AAC** | 2026 | [Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](https://arxiv.org/abs/2604.04161) | CVPR 2026 | Action | Action head | Command | Event |
+| **BCP** | 2026 | [Continue or Replan? Bernoulli-Continuation Policy Learning for Adaptive Horizon Execution](https://arxiv.org/abs/2608.03483) | arXiv 2026 | Action | Action head | Command | Event |
 | **UPS** | 2026 | [When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering](https://doi.org/10.15607/RSS.2026.XXII.142) | RSS 2026 | Verdict | Language | Verify | Fixed points |
 
 ## Citation
