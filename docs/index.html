@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Planner to Policy: A Survey of Large Language Models for Robot Control</title>
+<meta name="description" content="A survey of how large language models, vision-language models, and vision-language-action models control robots, organized by action interface and control authority. Includes a searchable catalog of 220 systems.">
+<meta name="keywords" content="large language models, vision-language models, vision-language-action models, robot control, robot manipulation, action interfaces, control authority, task planning, tool calling, code generation, LLM as policy, embodied AI, survey">
+<meta name="author" content="Kaizhen Tan">
+<meta property="og:title" content="From Planner to Policy: A Survey of Large Language Models for Robot Control">
+<meta property="og:description" content="How LLMs, VLMs, and VLA models control robots, from task planners to direct action policies. Catalog of 220 systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tantansir.github.io/llm-for-robot-control/">
+<meta property="og:image" content="https://tantansir.github.io/llm-for-robot-control/assets/teaser.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tantansir.github.io/llm-for-robot-control/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ScholarlyArticle",
+ "headline": "From Planner to Policy: A Survey of Large Language Models for Robot Control",
+ "author": {"@type": "Person", "name": "Kaizhen Tan", "affiliation": ["New York University", "Shanghai Key Laboratory of Urban Design and Urban Science (LOUD), NYU Shanghai"]},
+ "datePublished": "2026-10", "keywords": "large language models, robot control, vision-language-action models, action interfaces, control authority, survey",
+ "image": "https://tantansir.github.io/llm-for-robot-control/assets/teaser.png",
+ "url": "https://tantansir.github.io/llm-for-robot-control/"}
+</script>
+<style>
+:root {
+  --purple: #57068C; --purple-2: #7B3FB0; --lav: #F3EEF9; --lav-2: #E7DDF2;
+  --blue: #3F6FA8; --ochre: #A06F2E; --teal: #2E7C80; --red: #B0504A;
+  --ink: #232A36; --muted: #5F6B7A; --line: #E2E6EC; --bg: #FFFFFF; --soft: #F7F8FA; --card: #FFFFFF;
+  --shadow: 0 1px 2px rgba(30,42,58,.06), 0 6px 20px rgba(30,42,58,.06);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E8EAF0; --muted: #A9B1BE; --line: #2C3340; --bg: #12151B; --soft: #181C24; --card: #1B2029;
+    --lav: #231B2F; --lav-2: #2E2340; --purple: #C9A6EE; --purple-2: #B48AE0;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #E8EAF0; --muted: #A9B1BE; --line: #2C3340; --bg: #12151B; --soft: #181C24; --card: #1B2029;
+  --lav: #231B2F; --lav-2: #2E2340; --purple: #C9A6EE; --purple-2: #B48AE0;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--purple); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+/* navigation */
+nav.top { position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(180%) blur(10px); background: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--line); }
+nav.top .wrap { display: flex; align-items: center; gap: 18px; height: 54px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+nav.top .brand { font-weight: 700; color: var(--purple); margin-right: auto; }
+nav.top a.link { color: var(--muted); font-size: 14px; font-weight: 500; }
+nav.top a.link:hover { color: var(--ink); text-decoration: none; }
+/* hero */
+header.hero { background: radial-gradient(1200px 420px at 50% -10%, var(--lav-2), transparent 70%), var(--bg); padding: 56px 0 26px; text-align: center; }
+.kicker { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--purple); background: var(--lav); border: 1px solid var(--lav-2); padding: 4px 12px; border-radius: 999px; }
+h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(36px, 6vw, 60px); line-height: 1.08; margin: 18px 0 6px; color: var(--purple); letter-spacing: -.01em; }
+.subtitle { font-size: clamp(18px, 2.4vw, 24px); color: var(--ink); margin: 0 0 18px; font-weight: 500; }
+.authors { font-size: 17px; font-weight: 600; }
+.affil { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 24px 0 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid var(--line); background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+.btn:hover { text-decoration: none; border-color: var(--purple-2); }
+.btn.primary { background: var(--purple); color: #fff; border-color: var(--purple); }
+:root[data-theme="dark"] .btn.primary { color: #12151B; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #12151B; } }
+.btn svg { width: 18px; height: 18px; }
+.btn.soon { color: var(--muted); box-shadow: none; background: var(--soft); cursor: default; }
+.btn.soon:hover { border-color: var(--line); }
+/* sections */
+section { padding: 46px 0; border-top: 1px solid var(--line); }
+section.tight { border-top: 0; padding-top: 12px; }
+h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 30px; margin: 0 0 6px; letter-spacing: -.01em; }
+.lede { color: var(--muted); margin: 0 0 22px; max-width: 820px; }
+.figure { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+.figure img { width: 100%; height: auto; display: block; border-radius: 8px; }
+.caption { font-size: 14px; color: var(--muted); margin: 10px 2px 0; }
+.caption b { color: var(--ink); }
+.abstract { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; font-size: 16px; }
+.tldr { border-left: 4px solid var(--purple); padding: 6px 0 6px 16px; margin: 0 0 18px; font-size: 17px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+/* findings */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.stat .num { font-family: "Source Serif 4", Georgia, serif; font-size: 30px; font-weight: 700; color: var(--purple); line-height: 1.1; }
+.stat .txt { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.stat .src { font-size: 12px; color: var(--muted); margin-top: 8px; opacity: .85; }
+/* descriptors */
+.desc { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: 18px 0 22px; }
+.desc div { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.desc b { display: block; color: var(--purple); margin-bottom: 2px; }
+.desc span { font-size: 14px; color: var(--muted); }
+/* tables */
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 12px; }
+.controls input, .controls select { font: inherit; font-size: 14px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.controls input { flex: 1 1 240px; min-width: 200px; }
+.controls button { font: inherit; font-size: 14px; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--soft); color: var(--ink); cursor: pointer; }
+.count { font-size: 14px; color: var(--muted); margin-left: auto; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); max-height: 640px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { position: sticky; top: 0; background: var(--soft); z-index: 1; font-weight: 600; cursor: pointer; user-select: none; white-space: nowrap; }
+th.sorted-asc::after { content: " \2191"; color: var(--purple); }
+th.sorted-desc::after { content: " \2193"; color: var(--purple); }
+td.sys a { font-weight: 600; }
+td.title { color: var(--muted); font-size: 13px; min-width: 200px; }
+td.nowrap { white-space: nowrap; }
+tr:hover td { background: color-mix(in srgb, var(--lav) 55%, transparent); }
+.tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.fam-plan { background: #EAF1F9; color: #2F5C92; } .fam-tool { background: #EAF1F9; color: #2F5C92; }
+.fam-motion { background: #F8F0E3; color: #855A22; } .fam-sup { background: #E6F3F2; color: #23686B; }
+.fam-corr { background: #E6F3F2; color: #23686B; } .fam-obj { background: #F2EBF8; color: #57068C; }
+.fam-mem { background: #F2EBF8; color: #57068C; } .fam-ad { background: #F2EBF8; color: #57068C; }
+td.mark { text-align: center; font-weight: 700; }
+.yes { color: #2E7C80; } .no { color: #B8BEC8; }
+tfoot td { font-weight: 700; background: var(--soft); position: sticky; bottom: 0; }
+pre.bib { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; overflow-x: auto; font-size: 14px; position: relative; }
+.copy { position: absolute; top: 10px; right: 10px; }
+footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 13px; }
+.theme { background: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; color: var(--muted); cursor: pointer; font: inherit; font-size: 13px; }
+@media (max-width: 640px) { section { padding: 34px 0; } .abstract { padding: 18px; } h2 { font-size: 26px; } }
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <span class="brand">Planner &rarr; Policy</span>
+  <a class="link" href="#overview">Overview</a>
+  <a class="link" href="#findings">Findings</a>
+  <a class="link" href="#framework">Framework</a>
+  <a class="link" href="#taxonomy">Taxonomy</a>
+  <a class="link" href="#catalog">Catalog</a>
+  <a class="link" href="#reporting">Reporting</a>
+  <a class="link" href="#citation">Citation</a>
+  <button class="theme" id="theme" type="button" aria-label="Toggle colour theme">Theme</button>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Survey &middot; 220 systems &middot; 2022&ndash;2026</span>
+  <h1>From Planner to Policy</h1>
+  <p class="subtitle">A Survey of Large Language Models for Robot Control</p>
+  <div class="authors">Kaizhen Tan</div>
+  <div class="affil">Robert F. Wagner Graduate School of Public Service, New York University &middot; Shanghai Key Laboratory of Urban Design and Urban Science (LOUD), NYU Shanghai</div>
+  <div class="buttons">
+    <a class="btn primary" href="#catalog"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v2H4zm0 6h16v2H4zm0 6h10v2H4z"/></svg>Browse 220 systems</a>
+    <a class="btn" href="https://github.com/tantansir/llm-for-robot-control"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+    <span class="btn soon" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5z"/></svg>Paper (coming soon)</span>
+    <a class="btn" href="#citation">BibTeX</a>
+  </div>
+</div></header>
+
+<section class="tight" id="overview"><div class="wrap">
+  <div class="figure">
+    <img src="assets/teaser.webp" alt="Teaser figure: five command interfaces ordered from language model as planner to language model as policy, and four interfaces beside a learned policy" width="2160" height="1020">
+    <p class="caption"><b>From planner to policy.</b> Top: interfaces whose output the robot stack executes, ordered by the finest layer that the model sets, with an example output and representative systems. Bottom: interfaces that work beside a learned policy, and systems that switch interfaces. The illustrations were generated with FLUX.1-schnell and are schematic.</p>
+  </div>
+  <div style="height:22px"></div>
+  <div class="abstract">
+    <p class="tldr"><b>Summary.</b> Language models now control robots at every layer of the stack. The layer at which the model's output enters fixes how much of the motion it decides, how fast it must respond, and what each episode costs.</p>
+    <p>This survey reviews how large language models (LLMs), vision&ndash;language models (VLMs), and vision&ndash;language&ndash;action (VLA) models control robots at every layer of the control stack. They plan subtasks, call skills and tools, write control code, place waypoints, issue end-effector targets, supervise learned policies, and write rewards for optimizers. We organize these designs by their <em>action interface</em>: the variable through which the model's output enters the stack, together with the executor that turns it into motor commands. Each interface is described by its abstraction level, representation, composition operator, and invocation timing, and control authority by the entry layer, the decision interval, and the override rate. The review covers 220 systems published from 2022 to October 2026, from SayCan and Code as Policies to RT-2, &pi;<sub>0</sub>, and 2026 evaluations of general-purpose models acting as robot policies. Reported decision intervals range from about 5&nbsp;ms for policy heads to tens of minutes for agentic coding systems. In studies that hold the model fixed, programs needed fewer model calls than tool calls at similar or higher success. General models performed worst where precise geometry was required, and supervisors invoked only on events or compiled into code reduced cost. Of 54 representative systems, half report a time measure and 4 report a monetary cost. We formulate authority allocation as a constrained decision problem over success, latency, cost, and risk, and propose a protocol for comparing interfaces under matched conditions.</p>
+  </div>
+</div></section>
+
+<section id="findings"><div class="wrap">
+  <h2>Findings at a glance</h2>
+  <p class="lede">Numbers reported in the reviewed papers. They come from different robots, simulators, and model versions and are not pooled.</p>
+  <div class="stats">
+    <div class="stat"><div class="num">5&nbsp;ms &rarr; 51&nbsp;min</div><div class="txt">Range of reported decision intervals and task times, from a 200&nbsp;Hz policy head to a coding agent that acts as the policy for a whole task.</div><div class="src">Survey &sect;10.3, Fig.&nbsp;7</div></div>
+    <div class="stat"><div class="num">17.0 &rarr; 8.7</div><div class="txt">Model calls per episode when code cells replaced tool calls with the same model and primitives; input tokens fell from 788k to 276k.</div><div class="src">PyRUA-Lean, &sect;5.3</div></div>
+    <div class="stat"><div class="num">22.48% / 4.00%</div><div class="txt">GPT-6 Astra on RoboDojo: overall success above 40 public policies, but low success on the precision axis.</div><div class="src">&sect;6.2</div></div>
+    <div class="stat"><div class="num">3.63 calls</div><div class="txt">Planner calls per episode when a small monitor triggers the planner only at subtask completion (79.13% on RoboMME).</div><div class="src">Three-tier Astra, &sect;7.1</div></div>
+    <div class="stat"><div class="num">27 / 23 / 4</div><div class="txt">Of 54 representative systems, the number that report time, model calls or tokens, and monetary cost.</div><div class="src">Reporting matrix, &sect;10.2</div></div>
+  </div>
+</div></section>
+
+<section id="framework"><div class="wrap">
+  <h2>Framework: action interfaces and control authority</h2>
+  <p class="lede">An action interface is the pair of an interface variable that the language model emits and the executor that turns it into commands. Four descriptors place every system in a common space.</p>
+  <div class="desc">
+    <div><b>Abstraction level</b><span>The layer at which the variable is consumed: task, skill, motion, or action.</span></div>
+    <div><b>Representation</b><span>Natural language, formal language, tool calls, code, numbers as text, or action tokens.</span></div>
+    <div><b>Composition operator</b><span>Command, verify or select, residual offset, specify an objective, or predict outcomes.</span></div>
+    <div><b>Invocation timing</b><span>Before deployment, once per task, per subtask or tool step, on events, or periodically.</span></div>
+  </div>
+  <div class="grid2">
+    <div class="figure"><img src="assets/authority.png" alt="Grid of interfaces versus stack layers showing which variables the language model sets" loading="lazy"><p class="caption"><b>Where the output enters the stack.</b> Columns are interfaces and rows are layers; filled cells are set by the language model, hatched cells are shared with a learned policy, and grey cells are set by the executor.</p></div>
+    <div class="figure"><img src="assets/patterns.png" alt="Eight panels showing composition patterns: command, verify, residual, specify, predict, retrieve, divide roles, switch interface" loading="lazy"><p class="caption"><b>Composition patterns.</b> How a language model's output reaches the actuators: command, verification, residual offset, objective specification, outcome prediction, retrieval, role division, and interface switching.</p></div>
+  </div>
+</div></section>
+
+<section id="taxonomy"><div class="wrap">
+  <h2>Taxonomy and timeline</h2>
+  <p class="lede">Systems grouped by composition operator and abstraction level, and their first public versions from 2022 to 2026.</p>
+  <div class="grid2">
+    <div class="figure"><img src="assets/taxonomy.png" alt="Taxonomy tree of language models in the robot control stack" loading="lazy"><p class="caption"><b>Taxonomy.</b> Branches follow Sections 5 to 9 of the survey; numbers in brackets refer to the paper's bibliography.</p></div>
+    <div style="display:grid; gap:20px; align-content:start">
+      <div class="figure"><img src="assets/timeline.png" alt="Timeline of representative systems by interface family" loading="lazy"><p class="caption"><b>Timeline.</b> Representative systems by interface family at the month of their first public version.</p></div>
+      <div class="figure"><img src="assets/rates.png" alt="Reported decision intervals on a log scale from milliseconds to an hour" loading="lazy"><p class="caption"><b>Reported decision intervals.</b> Values quoted from the cited sources, on a log scale; they are not directly comparable across hardware and models.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="catalog"><div class="wrap">
+  <h2>Catalog of 220 systems</h2>
+  <p class="lede">The appendix catalog of the survey with the four interface codes. Search by name or title, filter by any code, and click a column to sort. Entries marked &dagger; do not use a language model and serve as reference points.</p>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search system or paper title" aria-label="Search">
+    <select id="f-group" aria-label="Family"></select>
+    <select id="f-level" aria-label="Level"></select>
+    <select id="f-operator" aria-label="Operator"></select>
+    <select id="f-timing" aria-label="Timing"></select>
+    <select id="f-year" aria-label="Year"></select>
+    <button type="button" id="reset">Reset</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="tablewrap"><table id="cat">
+    <thead><tr><th data-k="name">System</th><th data-k="year">Year</th><th data-k="group">Family</th><th data-k="level">Level</th><th data-k="repr">Repr.</th><th data-k="operator">Operator</th><th data-k="timing">Timing</th><th data-k="venue">Venue</th><th data-k="title">Paper</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+</div></section>
+
+<section id="reporting"><div class="wrap">
+  <h2>Reporting matrix</h2>
+  <p class="lede">For 54 representative systems: whether the paper reports experiments on physical robots and in simulation, a time quantity for the loop that contains the language model, model calls or tokens, and a monetary cost. Each mark was checked against the full text of the paper.</p>
+  <div class="tablewrap" style="max-height:560px"><table id="mat">
+    <thead><tr><th data-k="name">System</th><th data-k="year">Year</th><th data-k="lm">Language model</th><th data-k="level">Level</th><th data-k="operator">Operator</th><th data-k="timing">Timing</th><th data-k="real">Real robot</th><th data-k="sim">Simulation</th><th data-k="time">Time</th><th data-k="calls">Calls/tokens</th><th data-k="price">Price</th></tr></thead>
+    <tbody></tbody><tfoot></tfoot>
+  </table></div>
+  <div style="height:22px"></div>
+  <div class="grid2">
+    <div class="figure"><img src="assets/adaptive.png" alt="Escalation of authority and an event-triggered supervision episode" loading="lazy"><p class="caption"><b>Adaptive authority.</b> Modes ordered by calls, tokens, and the share of decisions the model makes, and an illustrative episode with event-triggered supervision.</p></div>
+    <div class="figure"><img src="assets/protocol.png" alt="Evaluation protocol: hold fixed, vary, record per episode, report" loading="lazy"><p class="caption"><b>A protocol for comparing interfaces.</b> Hold the task set, robot, model, and executor fixed; vary the interface and invocation policy; record success with time, cost, human involvement, and safety.</p></div>
+  </div>
+</div></section>
+
+<section id="citation"><div class="wrap">
+  <h2>Citation</h2>
+  <pre class="bib" id="bib">@misc{tan2026plannerpolicy,
+  title  = {From Planner to Policy: A Survey of Large Language Models for Robot Control},
+  author = {Tan, Kaizhen},
+  year   = {2026},
+  note   = {Project page: https://tantansir.github.io/llm-for-robot-control/}
+}<button class="btn copy" type="button" id="copy">Copy</button></pre>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Icons in the figures are glyph outlines from <a href="https://github.com/google/material-design-icons">Google Material Symbols</a> (Apache License 2.0). The teaser illustrations were generated with FLUX.1-schnell (Apache License 2.0) and are schematic. Catalog codes follow Appendix B of the survey. Last updated October 2026.</p>
+</div></footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  var SHORT = {'Task plans': 'Plans', 'Tool calls and programs': 'Tools & programs', 'Motion and action level': 'Motion & action',
+    'Supervision': 'Supervision', 'Corrections': 'Corrections', 'Objectives and prediction': 'Objectives',
+    'Memory and multi-agent': 'Memory & agents', 'Adaptive authority': 'Adaptive'};
+  var FAM = {'Task plans': 'fam-plan', 'Tool calls and programs': 'fam-tool', 'Motion and action level': 'fam-motion',
+    'Supervision': 'fam-sup', 'Corrections': 'fam-corr', 'Objectives and prediction': 'fam-obj',
+    'Memory and multi-agent': 'fam-mem', 'Adaptive authority': 'fam-ad'};
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
+  function uniq(rows, k) { var seen = {}, out = []; rows.forEach(function (r) { if (!seen[r[k]]) { seen[r[k]] = 1; out.push(r[k]); } }); return out; }
+  function fill(sel, label, vals) {
+    sel.innerHTML = '<option value="">' + label + ': all</option>' + vals.map(function (v) { return '<option>' + esc(v) + '</option>'; }).join('');
+  }
+  var cat = window.CATALOG || [], mat = window.MATRIX || [];
+  var el = function (id) { return document.getElementById(id); };
+  fill(el('f-group'), 'Family', uniq(cat, 'group'));
+  fill(el('f-level'), 'Level', uniq(cat, 'level').sort());
+  fill(el('f-operator'), 'Operator', uniq(cat, 'operator').sort());
+  fill(el('f-timing'), 'Timing', uniq(cat, 'timing').sort());
+  fill(el('f-year'), 'Year', uniq(cat, 'year').sort());
+  var sortKey = null, sortDir = 1;
+  function render() {
+    var q = el('q').value.trim().toLowerCase();
+    var f = {group: el('f-group').value, level: el('f-level').value, operator: el('f-operator').value,
+             timing: el('f-timing').value, year: el('f-year').value};
+    var rows = cat.filter(function (r) {
+      if (q && (r.name + ' ' + r.title + ' ' + r.venue).toLowerCase().indexOf(q) < 0) return false;
+      for (var k in f) { if (f[k] && String(r[k]) !== f[k]) return false; }
+      return true;
+    });
+    if (sortKey) rows = rows.slice().sort(function (a, b) { return (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * sortDir; });
+    el('cat').querySelector('tbody').innerHTML = rows.map(function (r) {
+      return '<tr><td class="sys"><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.name) + (r.ref ? ' &dagger;' : '') + '</a></td>' +
+        '<td>' + r.year + '</td><td><span class="tag ' + (FAM[r.group] || '') + '" title="' + esc(r.group) + '">' + esc(SHORT[r.group] || r.group) + '</span></td>' +
+        '<td>' + esc(r.level) + '</td><td>' + esc(r.repr) + '</td><td>' + esc(r.operator) + '</td><td>' + esc(r.timing) + '</td>' +
+        '<td class="nowrap">' + esc(r.venue) + ' ' + esc(r.pubyear) + '</td><td class="title">' + esc(r.title) + '</td></tr>';
+    }).join('');
+    el('count').textContent = 'Showing ' + rows.length + ' of ' + cat.length;
+  }
+  ['q', 'f-group', 'f-level', 'f-operator', 'f-timing', 'f-year'].forEach(function (id) { el(id).addEventListener('input', render); });
+  el('reset').addEventListener('click', function () { ['q', 'f-group', 'f-level', 'f-operator', 'f-timing', 'f-year'].forEach(function (id) { el(id).value = ''; }); sortKey = null; render(); });
+  function sortable(table, onSort) {
+    table.querySelectorAll('th').forEach(function (th) {
+      th.addEventListener('click', function () {
+        var k = th.getAttribute('data-k');
+        if (sortKey === k) { sortDir = -sortDir; } else { sortKey = k; sortDir = 1; }
+        table.querySelectorAll('th').forEach(function (t) { t.classList.remove('sorted-asc', 'sorted-desc'); });
+        th.classList.add(sortDir > 0 ? 'sorted-asc' : 'sorted-desc');
+        onSort();
+      });
+    });
+  }
+  sortable(el('cat'), render);
+  var mKey = null, mDir = 1;
+  function renderMat() {
+    var rows = mat.slice();
+    if (mKey) rows.sort(function (a, b) { var x = a[mKey], y = b[mKey]; return (x > y ? 1 : x < y ? -1 : 0) * mDir; });
+    var mark = function (v) { return '<td class="mark ' + (v ? 'yes">&#10003;' : 'no">&#10007;') + '</td>'; };
+    el('mat').querySelector('tbody').innerHTML = rows.map(function (r) {
+      return '<tr><td class="sys"><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a></td><td>' + r.year + '</td><td>' + esc(r.lm) + '</td>' +
+        '<td>' + esc(r.level) + '</td><td>' + esc(r.operator) + '</td><td>' + esc(r.timing) + '</td>' +
+        mark(r.real) + mark(r.sim) + mark(r.time) + mark(r.calls) + mark(r.price) + '</tr>';
+    }).join('');
+    var tot = function (k) { return mat.filter(function (r) { return r[k]; }).length; };
+    el('mat').querySelector('tfoot').innerHTML = '<tr><td colspan="6">Systems marked &#10003; (of ' + mat.length + ')</td>' +
+      ['real', 'sim', 'time', 'calls', 'price'].map(function (k) { return '<td class="mark">' + tot(k) + '</td>'; }).join('') + '</tr>';
+  }
+  el('mat').querySelectorAll('th').forEach(function (th) {
+    th.addEventListener('click', function () {
+      var k = th.getAttribute('data-k');
+      if (mKey === k) { mDir = -mDir; } else { mKey = k; mDir = (['real', 'sim', 'time', 'calls', 'price'].indexOf(k) >= 0) ? -1 : 1; }
+      el('mat').querySelectorAll('th').forEach(function (t) { t.classList.remove('sorted-asc', 'sorted-desc'); });
+      th.classList.add(mDir > 0 ? 'sorted-asc' : 'sorted-desc');
+      renderMat();
+    });
+  });
+  render(); renderMat();
+  el('copy').addEventListener('click', function () {
+    var txt = el('bib').childNodes[0].nodeValue;
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { el('copy').textContent = 'Copied'; setTimeout(function () { el('copy').textContent = 'Copy'; }, 1500); });
+  });
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  el('theme').addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
