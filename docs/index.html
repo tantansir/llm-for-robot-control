@@ -158,12 +158,12 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
 <section class="tight" id="overview"><div class="wrap">
   <div class="figure">
     <img src="assets/teaser.webp" alt="Teaser figure: five command interfaces ordered from language model as planner to language model as policy, and four interfaces beside a learned policy" width="2160" height="1020">
-    <p class="caption"><b>From planner to policy.</b> Top: interfaces whose output the robot stack executes, ordered by the finest layer that the model sets, with an example output and representative systems. Bottom: interfaces that work beside a learned policy, and systems that adapt the mode or timing of model calls. Examples refer to the configurations discussed in the survey. The illustrations were generated with FLUX.1-schnell and are schematic.</p>
+    <p class="caption"><b>From planner to policy.</b> Top: interfaces whose output the robot stack executes, ordered by the control authority of a representative configuration, with an example output and representative systems. Bottom: interfaces that work beside a learned policy, and systems that adapt the mode or timing of model calls. Examples refer to the configurations discussed in the survey. The illustrations were generated with FLUX.1-schnell and are schematic.</p>
   </div>
   <div style="height:22px"></div>
   <div class="abstract">
     <p class="tldr"><b>Summary.</b> Language models now control robots at every layer of the stack. The layer at which the model's output enters fixes how much of the motion it decides, how fast it must respond, and what each episode costs.</p>
-    <p>This survey reviews how large language models (LLMs), vision&ndash;language models (VLMs), and vision&ndash;language&ndash;action (VLA) models control robots at every layer of the control stack. They plan subtasks, call skills and tools, write control code, place waypoints, issue end-effector targets, supervise learned policies, and write rewards for optimizers. We organize these designs by their <em>action interface</em>: the variable through which the model's output enters the stack, together with the executor that turns it into motor commands. Each interface is described by its abstraction level, representation, composition operator, and invocation timing, and control authority by the entry layer, the decision interval, and the override rate. The review covers 220 systems published from 2022 to October 2026, from SayCan and Code as Policies to RT-2, &pi;<sub>0</sub>, and 2026 evaluations of general-purpose models acting as robot policies. Reported time scales range from about 5&nbsp;ms per action for policy heads to tens of minutes per task for agentic coding systems. With the model held fixed, programs needed fewer model calls than tool calls, while their effect on success depended on the model. General models had their lowest reported success where precise geometry was required, and supervisors invoked only on events or compiled into code reduced cost. Of 54 representative systems, half report a time measure and 4 report a monetary cost. We formulate authority allocation as a constrained decision problem over success, latency, cost, and risk, and propose a protocol for matched comparisons of interfaces.</p>
+    <p>This survey reviews how large language models (LLMs), vision&ndash;language models (VLMs), and vision&ndash;language&ndash;action (VLA) models control robots at every layer of the control stack. They plan subtasks, call skills and tools, write control code, place waypoints, issue end-effector targets, supervise learned policies, and write rewards for optimizers. We organize these designs by their <em>action interface</em>: the variable through which the model's output enters the stack, together with the executor that turns it into motor commands. Each interface is described by its abstraction level, representation, composition operator, and invocation timing, and control authority by the entry layer, the decision interval, and the override rate. The review covers 220 systems published from 2022 to October 2026, from SayCan and Code as Policies to RT-2, &pi;<sub>0</sub>, and 2026 evaluations of general-purpose models acting as robot policies. Reported time scales range from about 5&nbsp;ms per action for policy heads to tens of minutes per task for agentic coding systems. With the model held fixed, programs needed fewer model calls than tool calls, while their effect on success depended on the model. General models failed most often when they had to output precise geometry, and supervisors invoked only on events or compiled into code reduced cost. Of 54 representative systems, half report a time measure and 4 report a monetary cost. We formulate authority allocation as a constrained decision problem over success, latency, cost, and risk, and propose a protocol for matched comparisons of interfaces.</p>
   </div>
 </div></section>
 
@@ -189,7 +189,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
     <div><b>Invocation timing</b><span>Before deployment, once per task, per subtask or tool step, on events, or periodically.</span></div>
   </div>
   <div class="grid2">
-    <div class="figure"><img src="assets/authority.png" alt="Grid of interfaces versus stack layers showing which variables the language model sets" loading="lazy"><p class="caption"><b>Where the output enters the stack.</b> Columns are interfaces and rows are layers; filled cells are set by the language model, hatched cells are shared with a learned policy, and grey cells are set by the executor.</p></div>
+    <div class="figure"><img src="assets/authority.png" alt="Grid of interfaces versus stack layers showing which variables the language model sets" loading="lazy"><p class="caption"><b>Where the output enters the stack.</b> Columns show a representative configuration of each interface and rows are layers; filled cells are set by the language model, hatched cells are shared with a learned policy, and grey cells are set by the executor.</p></div>
     <div class="figure"><img src="assets/patterns.png" alt="Eight panels showing composition patterns: command, verify, residual, specify, predict, retrieve, divide roles, switch interface" loading="lazy"><p class="caption"><b>Composition patterns.</b> How a language model's output reaches the actuators: command, verification, residual offset, objective specification, outcome prediction, retrieval, role division, and interface switching.</p></div>
   </div>
 </div></section>
@@ -212,7 +212,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
   <div class="controls">
     <input id="q" type="search" placeholder="Search system or paper title" aria-label="Search">
     <select id="f-group" aria-label="Family"></select>
-    <select id="f-level" aria-label="Level"></select>
+    <select id="f-level" aria-label="Level or role"></select>
     <select id="f-operator" aria-label="Operator"></select>
     <select id="f-timing" aria-label="Timing"></select>
     <select id="f-year" aria-label="Year"></select>
@@ -220,7 +220,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
     <span class="count" id="count"></span>
   </div>
   <div class="tablewrap"><table id="cat">
-    <thead><tr><th data-k="name">System</th><th data-k="year">Year</th><th data-k="group">Family</th><th data-k="level">Level</th><th data-k="repr">Repr.</th><th data-k="operator">Operator</th><th data-k="timing">Timing</th><th data-k="venue">Venue</th><th data-k="title">Paper</th></tr></thead>
+    <thead><tr><th data-k="name">System</th><th data-k="year">Year</th><th data-k="group">Family</th><th data-k="level">Level/role</th><th data-k="repr">Repr.</th><th data-k="operator">Operator</th><th data-k="timing">Timing</th><th data-k="venue">Venue</th><th data-k="title">Paper</th></tr></thead>
     <tbody></tbody>
   </table></div>
 </div></section>
@@ -229,12 +229,12 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
   <h2>Reporting matrix</h2>
   <p class="lede">For 54 representative systems: whether the paper reports runs on physical robots and in simulation (qualitative runs count), a time quantity for the loop that contains the language model, model calls or tokens, and a monetary cost. Each mark was checked against the full text of the paper.</p>
   <div class="tablewrap" style="max-height:560px"><table id="mat">
-    <thead><tr><th data-k="name">System</th><th data-k="year">Year</th><th data-k="lm">Language model</th><th data-k="level">Level</th><th data-k="operator">Operator</th><th data-k="timing">Timing</th><th data-k="real">Real robot</th><th data-k="sim">Simulation</th><th data-k="time">Time</th><th data-k="calls">Calls/tokens</th><th data-k="price">Price</th></tr></thead>
+    <thead><tr><th data-k="name">System</th><th data-k="year">Year</th><th data-k="lm">Language model</th><th data-k="level">Level/role</th><th data-k="operator">Operator</th><th data-k="timing">Timing</th><th data-k="real">Real robot</th><th data-k="sim">Simulation</th><th data-k="time">Time</th><th data-k="calls">Calls/tokens</th><th data-k="price">Price</th></tr></thead>
     <tbody></tbody><tfoot></tfoot>
   </table></div>
   <div style="height:22px"></div>
   <div class="grid2">
-    <div class="figure"><img src="assets/adaptive.png" alt="Escalation of authority and an event-triggered supervision episode" loading="lazy"><p class="caption"><b>Adaptive authority.</b> Modes ordered by escalation level, and an illustrative episode with event-triggered supervision.</p></div>
+    <div class="figure"><img src="assets/adaptive.png" alt="Escalation of authority and an event-triggered supervision episode" loading="lazy"><p class="caption"><b>Adaptive authority.</b> Modes ordered by escalation level, and an illustrative episode with event-triggered supervision: a false alarm, a recoverable hold while the model call is pending, and the return of control to the policy.</p></div>
     <div class="figure"><img src="assets/protocol.png" alt="Evaluation protocol: hold fixed, vary, record per episode, report" loading="lazy"><p class="caption"><b>A protocol for comparing interfaces.</b> Hold the task set, robot, model, and underlying primitives, policies, and controllers fixed; vary the interface and invocation policy; record success with time, cost, human involvement, and safety.</p></div>
   </div>
 </div></section>
@@ -270,7 +270,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
   var cat = window.CATALOG || [], mat = window.MATRIX || [];
   var el = function (id) { return document.getElementById(id); };
   fill(el('f-group'), 'Family', uniq(cat, 'group'));
-  fill(el('f-level'), 'Level', uniq(cat, 'level').sort());
+  fill(el('f-level'), 'Level/role', uniq(cat, 'level').sort());
   fill(el('f-operator'), 'Operator', uniq(cat, 'operator').sort());
   fill(el('f-timing'), 'Timing', uniq(cat, 'timing').sort());
   fill(el('f-year'), 'Year', uniq(cat, 'year').sort());

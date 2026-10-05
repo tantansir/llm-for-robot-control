@@ -12,7 +12,7 @@ This repository accompanies the survey *From Planner to Policy*. The survey revi
 
 ## Paper list
 
-Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its representation, **Operator** how it combines with other controllers, and **Timing** when the model is called. Year is the first public version. Entries marked † are reference points whose deciding component is neither a language model nor a VLA (value functions, feature-based monitors, residual learners, video or latent world models). Each row codes the component and configuration that the survey discusses, and Offline timing marks calls during training or before deployment. Missing a paper? Please open an issue or a pull request.
+Codes: **Level/role** is the abstraction level of the emitted variable for command interfaces and its role (objective, score, verdict, residual, or prediction) for indirect operators, **Repr.** its representation, **Operator** how it combines with other controllers, and **Timing** when the model is called. Year is the first public version. Entries marked † are reference points whose deciding component is neither a language model nor a VLA (value functions, feature-based monitors, residual learners, video or latent world models). Each row codes the component and configuration that the survey discusses, and Offline timing marks calls during training or before deployment. Missing a paper? Please open an issue or a pull request.
 
 - [Task plans](#task-plans)
 - [Tool calls and programs](#tool-calls-and-programs)
@@ -27,7 +27,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §5.1.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **SayCan** | 2022 | [Do As I Can, Not As I Say: Grounding Language in Robotic Affordances](https://arxiv.org/abs/2204.01691) | CoRL 2022 | Skill | Language | Command | Per subtask |
 | **Inner Monologue** | 2022 | [Inner Monologue: Embodied Reasoning through Planning with Language Models](https://arxiv.org/abs/2207.05608) | CoRL 2022 | Task | Language | Command | Per subtask |
@@ -64,7 +64,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §5.2 and §5.3.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **Code as Policies** | 2022 | [Code as Policies: Language Model Programs for Embodied Control](https://doi.org/10.1109/ICRA48891.2023.10160591) | ICRA 2023 | Program | Code | Command | Once |
 | **ProgPrompt** | 2022 | [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://doi.org/10.1109/ICRA48891.2023.10161317) | ICRA 2023 | Program | Code | Command | Once |
@@ -99,7 +99,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **AgentRob** | 2026 | [AgentRob: From Virtual Forum Agents to Hijacked Physical Robots](https://arxiv.org/abs/2602.13591) | arXiv 2026 | Skill | Tool call | Command | Per step |
 | **ASPIRE** | 2026 | [ASPIRE: Agentic /Skills Discovery for Robotics](https://arxiv.org/abs/2607.00272) | arXiv 2026 | Program | Code | Command | Iterative |
 | **VLCP** | 2026 | [VLCP: Vision Language Control Policy Closed-Loop Code Replanning for Robot Manipulation](https://arxiv.org/abs/2608.16978) | arXiv 2026 | Action | Code | Command | Periodic |
-| **Contract-grounded BT synthesis** | 2026 | [Contract-Grounded Behavior Tree Synthesis via Coding Agents](https://arxiv.org/abs/2607.12220) | arXiv 2026 | Program | Tool call | Command | Once |
+| **Contract-grounded BT synthesis** | 2026 | [Contract-Grounded Behavior Tree Synthesis via Coding Agents](https://arxiv.org/abs/2607.12220) | arXiv 2026 | Program | Structured | Command | Once |
 | **EmbodiedSWE** | 2026 | [EmbodiedSWE: Coding Agents for Long Horizon Dexterous Robotics](https://arxiv.org/abs/2609.27308) | arXiv 2026 | Program | Code | Command | Iterative |
 | **PyRUA-Lean** | 2026 | [Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens](https://arxiv.org/abs/2610.01939) | arXiv 2026 | Program | Code | Command | Per step |
 | **FAEA** | 2026 | [Demonstration-Free Robotic Control via LLM Agents](https://arxiv.org/abs/2601.20334) | IROS 2026 | Program | Code | Command | Iterative |
@@ -110,7 +110,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §6.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **RT-Trajectory** | 2023 | [RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches](https://arxiv.org/abs/2311.01977) | ICLR 2024 | Motion | Code | Command | Once |
 | **Pattern machines** | 2023 | [Large Language Models as General Pattern Machines](https://arxiv.org/abs/2307.04721) | CoRL 2023 | Action | Numeric text | Command | Periodic |
@@ -144,7 +144,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §7.1.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **SuccessVQA** | 2023 | [Vision-Language Models as Success Detectors](https://arxiv.org/abs/2303.07280) | CoLLAs 2023 | Score | Language | Verify | After run |
 | **DoReMi** | 2023 | [DoReMi: Grounding Language Model by Detecting and Recovering from Plan-Execution Misalignment](https://doi.org/10.1109/IROS58592.2024.10802284) | IROS 2024 | Score | Language | Monitor | Periodic |
@@ -170,7 +170,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §7.2.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **Trajectory reshaping** | 2022 | [Reshaping Robot Trajectories Using Natural Language Commands: A Study of Multi-Modal Data Alignment Using Transformers](https://doi.org/10.1109/IROS47612.2022.9981810) | IROS 2022 | Residual | Language | Correct | Event |
 | **LaTTe** | 2022 | [LATTE: LAnguage Trajectory TransformEr](https://doi.org/10.1109/ICRA48891.2023.10161068) | ICRA 2023 | Residual | Action head | Correct | Event |
@@ -192,7 +192,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §7.3 and §7.4.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **SuSIE †** | 2023 | [Zero-Shot Robotic Manipulation with Pre-Trained Image-Editing Diffusion Models](https://arxiv.org/abs/2310.10639) | ICLR 2024 | Prediction | Images | Predict | Periodic |
 | **UniPi †** | 2023 | [Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111) | NeurIPS 2023 | Prediction | Images | Predict | Once |
@@ -230,7 +230,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §8.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **Central vs. decentralized (Chen et al.)** | 2023 | [Scalable Multi-Robot Collaboration with Large Language Models: Centralized or Decentralized Systems?](https://doi.org/10.1109/ICRA57147.2024.10610676) | ICRA 2024 | Skill | Language | Command | Per step |
 | **SMART-LLM** | 2023 | [SMART-LLM: Smart Multi-Agent Robot Task Planning using Large Language Models](https://doi.org/10.1109/IROS58592.2024.10802322) | IROS 2024 | Program | Code | Command | Once |
@@ -264,7 +264,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 *Survey §9.*
 
-| System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
+| System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **When2Ask** | 2023 | [Enabling Intelligent Interactions between an Agent and an LLM: A Reinforcement Learning Approach](https://arxiv.org/abs/2306.03604) | RLJ 2024 | Task | Language | Command | Event |
 | **KnowNo** | 2023 | [Robots That Ask For Help: Uncertainty Alignment for Large Language Model Planners](https://arxiv.org/abs/2307.01928) | CoRL 2023 | Task | Language | Propose | Per step |
@@ -291,7 +291,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **Hume** | 2025 | [Hume: Introducing System-2 Thinking in Visual-Language-Action Model](https://arxiv.org/abs/2505.21432) | arXiv 2025 | Verdict | Scalar | Verify | Periodic |
 | **FlashVLA** | 2025 | [Think Twice, Act Once: Token-Aware Compression and Action Reuse for Efficient Inference in Vision-Language-Action Models](https://arxiv.org/abs/2505.21200) | arXiv 2025 | Action | Action tokens | Command | Event |
 | **FOREWARN** | 2025 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://doi.org/10.15607/RSS.2025.XXI.076) | RSS 2025 | Verdict | Language | Verify | Per decision |
-| **Agentic Robot** | 2025 | [Agentic Robot: A Brain-Inspired Framework for Vision-Language-Action Models in Embodied Agents](https://arxiv.org/abs/2505.23450) | arXiv 2025 | Task | Language | Command | Once |
+| **Agentic Robot (verifier)** | 2025 | [Agentic Robot: A Brain-Inspired Framework for Vision-Language-Action Models in Embodied Agents](https://arxiv.org/abs/2505.23450) | arXiv 2025 | Verdict | Language | Verify | Periodic |
 | **LoHoVLA** | 2025 | [LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks](https://arxiv.org/abs/2506.00411) | arXiv 2025 | Task | Language | Command | Event |
 | **DIRECT** | 2026 | [DIRECT: When and Where Should You Allocate Test-Time Compute in Embodied Planners?](https://arxiv.org/abs/2606.12402) | arXiv 2026 | Task | Language | Command | Per subtask |
 | **DVAC** | 2026 | [Denoising Tells When to Replan: Denoising-Variance Adaptive Chunking for Flow-Based Robot Policies](https://arxiv.org/abs/2606.03847) | arXiv 2026 | Action | Action head | Command | Event |
