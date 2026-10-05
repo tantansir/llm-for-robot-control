@@ -12,7 +12,7 @@ This repository accompanies the survey *From Planner to Policy*. The survey revi
 
 ## Paper list
 
-Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its representation, **Operator** how it combines with other controllers, and **Timing** when the model is called. Year is the first public version. Entries marked † are reference points whose deciding component is neither a language model nor a VLA (value functions, feature-based monitors, residual learners, video world models). Missing a paper? Please open an issue or a pull request.
+Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its representation, **Operator** how it combines with other controllers, and **Timing** when the model is called. Year is the first public version. Entries marked † are reference points whose deciding component is neither a language model nor a VLA (value functions, feature-based monitors, residual learners, video or latent world models). Each row codes the component and configuration that the survey discusses, and Offline timing marks calls during training or before deployment. Missing a paper? Please open an issue or a pull request.
 
 - [Task plans](#task-plans)
 - [Tool calls and programs](#tool-calls-and-programs)
@@ -186,7 +186,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **Policy Decorator †** | 2024 | [Policy Decorator: Model-Agnostic Online Refinement for Large Policy Model](https://arxiv.org/abs/2412.13630) | ICLR 2025 | Residual | -- | Correct | Periodic |
 | **Hi Robot** | 2025 | [Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](https://arxiv.org/abs/2502.19417) | ICML 2025 | Task | Language | Command | Periodic |
 | **PLD †** | 2025 | [Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](https://arxiv.org/abs/2511.00091) | ICLR 2026 | Residual | Action head | Correct | Periodic |
-| **ReCoVLA** | 2026 | [ReCoVLA: VLM-Guided Reward Compilation for Failure Recovery in Vision-Language-Action Policies](https://arxiv.org/abs/2606.09630) | arXiv 2026 | Objective | Structured | Specify | Event |
+| **ReCoVLA** | 2026 | [ReCoVLA: VLM-Guided Reward Compilation for Failure Recovery in Vision-Language-Action Policies](https://arxiv.org/abs/2606.09630) | arXiv 2026 | Objective | Structured | Specify | Offline |
 
 ### Objectives and prediction
 
@@ -194,20 +194,20 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 
 | System | Year | Paper | Venue | Level | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
-| **SuSIE** | 2023 | [Zero-Shot Robotic Manipulation with Pre-Trained Image-Editing Diffusion Models](https://arxiv.org/abs/2310.10639) | ICLR 2024 | Prediction | Images | Predict | Periodic |
-| **UniPi** | 2023 | [Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111) | NeurIPS 2023 | Prediction | Images | Predict | Once |
+| **SuSIE †** | 2023 | [Zero-Shot Robotic Manipulation with Pre-Trained Image-Editing Diffusion Models](https://arxiv.org/abs/2310.10639) | ICLR 2024 | Prediction | Images | Predict | Periodic |
+| **UniPi †** | 2023 | [Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111) | NeurIPS 2023 | Prediction | Images | Predict | Once |
 | **Video Language Planning** | 2023 | [Video Language Planning](https://arxiv.org/abs/2310.10625) | ICLR 2024 | Task | Language | Propose | Per decision |
 | **NL2LTL** | 2023 | [NL2LTL – a Python Package for Converting Natural Language (NL) Instructions to Linear Temporal Logic (LTL) Formulas](https://doi.org/10.1609/aaai.v37i13.27068) | AAAI 2023 | Objective | Structured | Specify | Once |
 | **RAP** | 2023 | [Reasoning with Language Model is Planning with World Model](https://doi.org/10.18653/v1/2023.emnlp-main.507) | EMNLP 2023 | Prediction | Language | Predict | Offline |
 | **Reward design with LMs** | 2023 | [Reward Design with Language Models](https://arxiv.org/abs/2303.00001) | ICLR 2023 | Objective | Language | Specify | Per episode |
 | **Lang2LTL** | 2023 | [Grounding Complex Natural Language Commands for Temporal Tasks in Unseen Environments](https://arxiv.org/abs/2302.11649) | CoRL 2023 | Objective | Structured | Specify | Once |
 | **Eureka** | 2023 | [Eureka: Human-Level Reward Design via Coding Large Language Models](https://arxiv.org/abs/2310.12931) | ICLR 2024 | Objective | Code | Specify | Offline |
-| **VLM-RMs** | 2023 | [Vision-Language Models are Zero-Shot Reward Models for Reinforcement Learning](https://arxiv.org/abs/2310.12921) | ICLR 2024 | Objective | Language | Specify | Periodic |
+| **VLM-RMs †** | 2023 | [Vision-Language Models are Zero-Shot Reward Models for Reinforcement Learning](https://arxiv.org/abs/2310.12921) | ICLR 2024 | Objective | Scalar | Specify | Periodic |
 | **LanguageMPC** | 2023 | [LanguageMPC: Large Language Models as Decision Makers for Autonomous Driving](https://arxiv.org/abs/2310.03026) | arXiv 2023 | Objective | Language | Specify | Periodic |
 | **Self-refined reward design** | 2023 | [Self-Refined Large Language Model as Automated Reward Function Designer for Deep Reinforcement Learning in Robotics](https://arxiv.org/abs/2309.06687) | arXiv 2023 | Objective | Code | Specify | Offline |
 | **RoboGen** | 2023 | [RoboGen: Towards Unleashing Infinite Data for Automated Robot Learning via Generative Simulation](https://arxiv.org/abs/2311.01455) | ICML 2024 | Objective | Code | Specify | Offline |
 | **Text2Reward** | 2023 | [Text2Reward: Reward Shaping with Language Models for Reinforcement Learning](https://arxiv.org/abs/2309.11489) | ICLR 2024 | Objective | Code | Specify | Offline |
-| **UniSim** | 2023 | [Learning Interactive Real-World Simulators](https://arxiv.org/abs/2310.06114) | ICLR 2024 | Prediction | Images | Predict | Offline |
+| **UniSim †** | 2023 | [Learning Interactive Real-World Simulators](https://arxiv.org/abs/2310.06114) | ICLR 2024 | Prediction | Images | Predict | Offline |
 | **Language to Rewards** | 2023 | [Language to Rewards for Robotic Skill Synthesis](https://arxiv.org/abs/2306.08647) | CoRL 2023 | Objective | Code | Specify | Once |
 | **LLM-MCTS** | 2023 | [Large Language Models as Commonsense Knowledge for Large-Scale Task Planning](https://arxiv.org/abs/2305.14078) | NeurIPS 2023 | Prediction | Language | Predict | Per step |
 | **DrEureka** | 2024 | [DrEureka: Language Model Guided Sim-To-Real Transfer](https://doi.org/10.15607/RSS.2024.XX.094) | RSS 2024 | Objective | Code | Specify | Offline |
@@ -215,9 +215,9 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **VLMPC** | 2024 | [VLMPC: Vision-Language Model Predictive Control for Robotic Manipulation](https://doi.org/10.15607/RSS.2024.XX.106) | RSS 2024 | Score | Language | Propose | Periodic |
 | **V-JEPA 2 †** | 2025 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | arXiv 2025 | Prediction | Latent | Predict | Periodic |
 | **WorldVLA** | 2025 | [WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539) | arXiv 2025 | Action | Action tokens | Command | Periodic |
-| **Ctrl-World** | 2025 | [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | ICLR 2026 | Prediction | Images | Predict | Offline |
-| **DreamGen** | 2025 | [DreamGen: Unlocking Generalization in Robot Learning through Video World Models](https://arxiv.org/abs/2505.12705) | CoRL 2025 | Prediction | Images | Predict | Offline |
-| **Genie Envisioner** | 2025 | [Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](https://arxiv.org/abs/2508.05635) | ICLR 2026 | Prediction | Images | Predict | Periodic |
+| **Ctrl-World †** | 2025 | [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | ICLR 2026 | Prediction | Images | Predict | Offline |
+| **DreamGen †** | 2025 | [DreamGen: Unlocking Generalization in Robot Learning through Video World Models](https://arxiv.org/abs/2505.12705) | CoRL 2025 | Prediction | Images | Predict | Offline |
+| **Genie Envisioner †** | 2025 | [Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](https://arxiv.org/abs/2508.05635) | ICLR 2026 | Prediction | Images | Predict | Periodic |
 | **Robo-Dopamine** | 2025 | [General Process Reward Modeling for Robotic Reinforcement Learning](https://arxiv.org/abs/2512.23703) | CVPR 2026 | Score | Numeric text | Specify | Periodic |
 | **VLAC** | 2025 | [A Vision-Language-Action-Critic Model for Robotic Real-World Reinforcement Learning](https://arxiv.org/abs/2509.15937) | arXiv 2025 | Score | Numeric text | Specify | Periodic |
 | **τ0-VLA** | 2026 | [τ0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation](https://arxiv.org/abs/2608.16885) | arXiv 2026 | Task | Language | Propose | Event |
