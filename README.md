@@ -1,13 +1,13 @@
 # From Planner to Policy: A Survey of Large Language Models for Robot Control
 
-[![Project Page](https://img.shields.io/badge/Project-Page-57068C)](https://tantansir.github.io/llm-for-robot-control/) [![Systems](https://img.shields.io/badge/systems-220-3F6FA8)](#paper-list) [![References](https://img.shields.io/badge/references-353-2E7C80)](#citation)
+[![Project Page](https://img.shields.io/badge/Project-Page-57068C)](https://tantansir.github.io/llm-for-robot-control/) [![Systems](https://img.shields.io/badge/systems-221-3F6FA8)](#paper-list) [![References](https://img.shields.io/badge/references-354-2E7C80)](#citation)
 
 <p align="center"><img src="docs/assets/teaser.png" width="100%" alt="From planner to policy: interfaces through which a language model controls a robot"></p>
 
 This repository accompanies the survey *From Planner to Policy*. The survey reviews how large language models (LLMs), vision-language models (VLMs), and vision-language-action (VLA) models control robots, organized by the action interface: the variable through which the model's output enters the robot control stack, together with the executor that turns it into motor commands. Each interface is described by four descriptors: abstraction level, representation, composition operator, and invocation timing.
 
 - **Project page:** https://tantansir.github.io/llm-for-robot-control/
-- **Paper list:** the 220 systems catalogued in Appendix B of the survey, with their interface codes ([below](#paper-list)).
+- **Paper list:** the 221 systems catalogued in Appendix B of the survey, with their interface codes ([below](#paper-list)).
 - **Reporting matrix:** of 54 representative systems, 27 report a time quantity for the loop that contains the language model, 23 report model calls or tokens, and 4 report a monetary cost (Table 8 of the survey).
 
 ## Paper list
@@ -163,6 +163,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **Phoenix** | 2025 | [Phoenix: A Motion-based Self-Reflection Framework for Fine-grained Robotic Action Correction](https://arxiv.org/abs/2504.14588) | CVPR 2025 | Verdict | Language | Verify | Periodic |
 | **RoboFAC** | 2025 | [RoboFAC: A Comprehensive Framework for Robotic Failure Analysis and Correction](https://arxiv.org/abs/2505.12224) | arXiv 2025 | Residual | Language | Verify | Fixed points |
 | **Astra-gated π0.5** | 2026 | [Astra-Gated VLA Hybrid Rollout in RoboDojo](https://github.com/Alanq0327/astra-VLA-robodojo-hybrid-rollout) | GitHub 2026 | Verdict | Language | Verify | Per decision |
+| **GPT-6 Astra hybrid control (Galbot)** | 2026 | [Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies](https://arxiv.org/abs/2609.38537) | arXiv 2026 | Motion | Tool call | Correct | Per decision |
 | **CorrectVLA** | 2026 | [Training-Free Action Correction for VLA Model Failures via Language Feedback](https://arxiv.org/abs/2608.29967) | arXiv 2026 | Residual | Structured | Correct | Event |
 | **FLARE** | 2026 | [FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](https://arxiv.org/abs/2608.26645) | CVPR 2026 | Verdict | Language | Monitor | Event |
 
