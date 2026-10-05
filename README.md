@@ -270,7 +270,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **KnowNo** | 2023 | [Robots That Ask For Help: Uncertainty Alignment for Large Language Model Planners](https://arxiv.org/abs/2307.01928) | CoRL 2023 | Task | Language | Propose | Per step |
 | **RoboDual** | 2024 | [Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation](https://arxiv.org/abs/2410.08001) | arXiv 2024 | Action | Action tokens | Propose | Periodic |
 | **Introspective planning** | 2024 | [Introspective Planning: Aligning Robots' Uncertainty with Inherent Task Ambiguity](https://arxiv.org/abs/2402.06529) | NeurIPS 2024 | Task | Language | Propose | Per step |
-| **LCB** | 2024 | [From LLMs to Actions: Latent Codes as Bridges in Hierarchical Robot Control](https://doi.org/10.1109/IROS58592.2024.10801683) | IROS 2024 | Latent | Action head | Command | Periodic |
+| **LCB** | 2024 | [From LLMs to Actions: Latent Codes as Bridges in Hierarchical Robot Control](https://doi.org/10.1109/IROS58592.2024.10801683) | IROS 2024 | Latent | Latent | Command | Periodic |
 | **AESOP** | 2024 | [Real-Time Anomaly Detection and Reactive Planning with Large Language Models](https://doi.org/10.15607/RSS.2024.XX.114) | RSS 2024 | Verdict | Language | Monitor | Event |
 | **DeeR-VLA** | 2024 | [DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution](https://arxiv.org/abs/2411.02359) | NeurIPS 2024 | Action | Action head | Command | Periodic |
 | **HiRT** | 2024 | [HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers](https://arxiv.org/abs/2410.05273) | CoRL 2024 | Latent | Latent | Command | Periodic |
@@ -288,7 +288,7 @@ Codes: **Level** is the abstraction level of the emitted variable, **Repr.** its
 | **OneTwoVLA** | 2025 | [OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](https://arxiv.org/abs/2505.11917) | ICLR 2026 | Task | Language | Command | Event |
 | **GR00T N1** | 2025 | [GR00T N1: An Open Foundation Model for Generalist Humanoid Robots](https://arxiv.org/abs/2503.14734) | arXiv 2025 | Action | Action head | Command | Periodic |
 | **SmolVLA (asynchronous)** | 2025 | [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844) | arXiv 2025 | Action | Action head | Command | Event |
-| **Hume** | 2025 | [Hume: Introducing System-2 Thinking in Visual-Language-Action Model](https://arxiv.org/abs/2505.21432) | arXiv 2025 | Verdict | Action head | Verify | Periodic |
+| **Hume** | 2025 | [Hume: Introducing System-2 Thinking in Visual-Language-Action Model](https://arxiv.org/abs/2505.21432) | arXiv 2025 | Verdict | Scalar | Verify | Periodic |
 | **FlashVLA** | 2025 | [Think Twice, Act Once: Token-Aware Compression and Action Reuse for Efficient Inference in Vision-Language-Action Models](https://arxiv.org/abs/2505.21200) | arXiv 2025 | Action | Action tokens | Command | Event |
 | **FOREWARN** | 2025 | [From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment](https://doi.org/10.15607/RSS.2025.XXI.076) | RSS 2025 | Verdict | Language | Verify | Per decision |
 | **Agentic Robot** | 2025 | [Agentic Robot: A Brain-Inspired Framework for Vision-Language-Action Models in Embodied Agents](https://arxiv.org/abs/2505.23450) | arXiv 2025 | Task | Language | Command | Once |
