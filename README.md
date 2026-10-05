@@ -198,7 +198,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **UniPi †** | 2023 | [Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111) | NeurIPS 2023 | Prediction | Images | Predict | Once |
 | **Video Language Planning** | 2023 | [Video Language Planning](https://arxiv.org/abs/2310.10625) | ICLR 2024 | Task | Language | Propose | Per decision |
 | **NL2LTL** | 2023 | [NL2LTL – a Python Package for Converting Natural Language (NL) Instructions to Linear Temporal Logic (LTL) Formulas](https://doi.org/10.1609/aaai.v37i13.27068) | AAAI 2023 | Objective | Structured | Specify | Once |
-| **RAP** | 2023 | [Reasoning with Language Model is Planning with World Model](https://doi.org/10.18653/v1/2023.emnlp-main.507) | EMNLP 2023 | Prediction | Language | Predict | Offline |
+| **RAP** | 2023 | [Reasoning with Language Model is Planning with World Model](https://doi.org/10.18653/v1/2023.emnlp-main.507) | EMNLP 2023 | Prediction | Language | Predict | Iterative |
 | **Reward design with LMs** | 2023 | [Reward Design with Language Models](https://arxiv.org/abs/2303.00001) | ICLR 2023 | Objective | Language | Specify | Per episode |
 | **Lang2LTL** | 2023 | [Grounding Complex Natural Language Commands for Temporal Tasks in Unseen Environments](https://arxiv.org/abs/2302.11649) | CoRL 2023 | Objective | Structured | Specify | Once |
 | **Eureka** | 2023 | [Eureka: Human-Level Reward Design via Coding Large Language Models](https://arxiv.org/abs/2310.12931) | ICLR 2024 | Objective | Code | Specify | Offline |
