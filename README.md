@@ -160,7 +160,6 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **SAFE †** | 2025 | [SAFE: Multitask Failure Detection for Vision-Language-Action Models](https://arxiv.org/abs/2506.09937) | NeurIPS 2025 | Score | Scalar | Monitor | Periodic |
 | **RoboMonkey** | 2025 | [RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models](https://arxiv.org/abs/2506.17811) | CoRL 2025 | Verdict | Scalar | Verify | Periodic |
 | **FailSafe** | 2025 | [FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models](https://arxiv.org/abs/2510.01642) | IROS 2026 | Residual | Numeric text | Correct | Periodic |
-| **Phoenix** | 2025 | [Phoenix: A Motion-based Self-Reflection Framework for Fine-grained Robotic Action Correction](https://arxiv.org/abs/2504.14588) | CVPR 2025 | Verdict | Language | Verify | Periodic |
 | **RoboFAC** | 2025 | [RoboFAC: A Comprehensive Framework for Robotic Failure Analysis and Correction](https://arxiv.org/abs/2505.12224) | arXiv 2025 | Residual | Language | Correct | Fixed points |
 | **Astra-gated π0.5** | 2026 | [Astra-Gated VLA Hybrid Rollout in RoboDojo](https://github.com/Alanq0327/astra-VLA-robodojo-hybrid-rollout) | GitHub 2026 | Verdict | Language | Verify | Per decision |
 | **GPT-6 Astra hybrid control (Galbot)** | 2026 | [Systematically Exploring the Capabilities of GPT-6 Astra as Embodied Policies](https://arxiv.org/abs/2609.38537) | arXiv 2026 | Motion | Tool call | Correct | Per decision |
@@ -186,6 +185,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **ExTraCT †** | 2024 | [ExTraCT – Explainable Trajectory Corrections for Language-Based Human-Robot Interaction Using Textual Feature Descriptions](https://doi.org/10.3389/frobt.2024.1345693) | Front. Robot. AI 2024 | Residual | Language | Correct | Event |
 | **Policy Decorator †** | 2024 | [Policy Decorator: Model-Agnostic Online Refinement for Large Policy Model](https://arxiv.org/abs/2412.13630) | ICLR 2025 | Residual | -- | Correct | Periodic |
 | **Hi Robot** | 2025 | [Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](https://arxiv.org/abs/2502.19417) | ICML 2025 | Task | Language | Command | Periodic |
+| **Phoenix** | 2025 | [Phoenix: A Motion-based Self-Reflection Framework for Fine-grained Robotic Action Correction](https://arxiv.org/abs/2504.14588) | CVPR 2025 | Residual | Language | Correct | Periodic |
 | **PLD †** | 2025 | [Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](https://arxiv.org/abs/2511.00091) | ICLR 2026 | Residual | Action head | Correct | Periodic |
 | **ReCoVLA** | 2026 | [ReCoVLA: VLM-Guided Reward Compilation for Failure Recovery in Vision-Language-Action Policies](https://arxiv.org/abs/2606.09630) | arXiv 2026 | Objective | Structured | Specify | Offline |
 
