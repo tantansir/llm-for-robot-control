@@ -67,7 +67,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
 | **Code as Policies** | 2022 | [Code as Policies: Language Model Programs for Embodied Control](https://doi.org/10.1109/ICRA48891.2023.10160591) | ICRA 2023 | Program | Code | Command | Once |
-| **ProgPrompt** | 2022 | [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://doi.org/10.1109/ICRA48891.2023.10161317) | ICRA 2023 | Program | Code | Command | Once |
+| **ProgPrompt** | 2022 | [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://doi.org/10.1109/ICRA48891.2023.10161317) | ICRA 2023 | Program | Code | Command | Fixed points |
 | **Phase-step BT generation** | 2023 | [Robot Behavior-Tree-Based Task Generation with Large Language Models](https://ceur-ws.org/Vol-3433/paper4.pdf) | AAAI Spring Symposium 2023 | Program | Structured | Propose | Once |
 | **CodeBotler** | 2023 | [Deploying and Evaluating LLMs to Program Service Mobile Robots](https://doi.org/10.1109/LRA.2024.3360020) | RA-L 2024 | Program | Code | Command | Once |
 | **Instruct2Act** | 2023 | [Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model](https://arxiv.org/abs/2305.11176) | arXiv 2023 | Program | Code | Command | Once |
@@ -87,7 +87,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **ROS-LLM** | 2024 | [A Robot Operating System Framework for Using Large Language Models in Embodied AI](https://doi.org/10.1038/s42256-026-01186-z) | Nat. Mach. Intell. 2026 | Program | Code | Command | Once |
 | **RoboCodeX** | 2024 | [RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis](https://proceedings.mlr.press/v235/mu24a.html) | ICML 2024 | Program | Code | Command | Once |
 | **ROSA** | 2024 | [Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent](https://doi.org/10.1109/AERO63441.2025.11068426) | IEEE Aerospace 2025 | Skill | Tool call | Command | Per step |
-| **BETR-XP-LLM** | 2024 | [Automatic Behavior Tree Expansion with LLMs for Robotic Manipulation](https://doi.org/10.1109/ICRA55743.2025.11127942) | ICRA 2025 | Objective | Structured | Specify | Once |
+| **BETR-XP-LLM** | 2024 | [Automatic Behavior Tree Expansion with LLMs for Robotic Manipulation](https://doi.org/10.1109/ICRA55743.2025.11127942) | ICRA 2025 | Objective | Structured | Specify | Event |
 | **CodeAct (non-robot)** | 2024 | [Executable Code Actions Elicit Better LLM Agents](https://proceedings.mlr.press/v235/wang24h.html) | ICML 2024 | Program | Code | Command | Per step |
 | **Code-as-Monitor** | 2024 | [Code-as-Monitor: Constraint-aware Visual Programming for Reactive and Proactive Robotic Failure Detection](https://arxiv.org/abs/2412.04455) | CVPR 2025 | Program | Code | Monitor | Per subtask |
 | **RAI** | 2025 | [RAI: Flexible Agent Framework for Embodied AI](https://doi.org/10.1007/978-3-032-05925-3_16) | PAAMS Highlights 2025 | Skill | Tool call | Command | Per step |
