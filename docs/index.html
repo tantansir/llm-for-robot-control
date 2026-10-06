@@ -157,8 +157,8 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
 
 <section class="tight" id="overview"><div class="wrap">
   <div class="figure">
-    <img src="assets/teaser.webp" alt="Teaser figure: five command interfaces ordered from language model as planner to language model as policy, and four interfaces beside a learned policy" width="2160" height="1020">
-    <p class="caption"><b>From planner to policy.</b> Top: interfaces through which a language model commands the robot, ordered by its control authority in a representative configuration. Bottom: interfaces in which the model works beside a learned policy, and systems that adapt the interface or the timing of model calls. Illustrations: FLUX.1-schnell.</p>
+    <img src="assets/teaser.webp" alt="Teaser figure: five command interfaces ordered from language model as planner to language model as policy, and four interfaces with indirect influence or adaptive computation" width="2160" height="1020">
+    <p class="caption"><b>From planner to policy.</b> Top: interfaces through which a language model commands the robot, ordered by its control authority in a representative configuration. Bottom: interfaces through which the model influences the motion indirectly, and systems that adapt the interface or the timing of model calls. Illustrations: FLUX.1-schnell.</p>
   </div>
   <div style="height:22px"></div>
   <div class="abstract">
@@ -198,9 +198,9 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
   <h2>Taxonomy and timeline</h2>
   <p class="lede">Systems grouped by composition operator and abstraction level, and their first public versions from 2022 to 2026.</p>
   <div class="grid2">
-    <div class="figure"><img src="assets/taxonomy.png" alt="Taxonomy tree of language models in the robot control stack" loading="lazy"><p class="caption"><b>Taxonomy.</b> Systems are grouped by composition operator and then by the abstraction level of the emitted variable, following the catalog codes; a section number inside a leaf marks a system that the survey discusses in another section, and &dagger; marks reference points whose deciding component is neither a language model nor a VLA. Numbers in brackets refer to the paper's bibliography.</p></div>
+    <div class="figure"><img src="assets/taxonomy.png" alt="Taxonomy tree of language models in the robot control stack" loading="lazy"><p class="caption"><b>Taxonomy.</b> Systems are grouped by composition operator and abstraction level, and the last two branches by mechanism. Each entry refers to the configuration discussed in the cited section, and the groups overlap; direct actions include step-wise end-effector targets, which the catalog codes as Motion. A section number inside a leaf marks a system that the survey discusses in another section, and &dagger; marks reference points whose deciding component is neither a language model nor a VLA. Numbers in brackets refer to the paper's bibliography.</p></div>
     <div style="display:grid; gap:20px; align-content:start">
-      <div class="figure"><img src="assets/timeline.png" alt="Timeline of representative systems by interface family" loading="lazy"><p class="caption"><b>Timeline.</b> Representative systems by interface family at the month of their first public version.</p></div>
+      <div class="figure"><img src="assets/timeline.png" alt="Timeline of representative systems by interface family and mechanism" loading="lazy"><p class="caption"><b>Timeline.</b> Representative systems by interface family and mechanism at the month of their first public version. A box refers to the component or configuration discussed in the survey, and &dagger; marks reference points.</p></div>
       <div class="figure"><img src="assets/rates.png" alt="Reported time scales on a log scale from milliseconds to an hour" loading="lazy"><p class="caption"><b>Reported time scales.</b> Action periods, model-call latencies, and task durations quoted from the cited sources, on a log scale; they are not directly comparable across hardware and models.</p></div>
     </div>
   </div>

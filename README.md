@@ -173,17 +173,17 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 
 | System | Year | Paper | Venue | Level/role | Repr. | Operator | Timing |
 |---|---|---|---|---|---|---|---|
-| **Trajectory reshaping** | 2022 | [Reshaping Robot Trajectories Using Natural Language Commands: A Study of Multi-Modal Data Alignment Using Transformers](https://doi.org/10.1109/IROS47612.2022.9981810) | IROS 2022 | Residual | Language | Correct | Event |
-| **LaTTe** | 2022 | [LATTE: LAnguage Trajectory TransformEr](https://doi.org/10.1109/ICRA48891.2023.10161068) | ICRA 2023 | Residual | Action head | Correct | Event |
+| **Trajectory reshaping †** | 2022 | [Reshaping Robot Trajectories Using Natural Language Commands: A Study of Multi-Modal Data Alignment Using Transformers](https://doi.org/10.1109/IROS47612.2022.9981810) | IROS 2022 | Residual | Language | Correct | Event |
+| **LaTTe †** | 2022 | [LATTE: LAnguage Trajectory TransformEr](https://doi.org/10.1109/ICRA48891.2023.10161068) | ICRA 2023 | Residual | Action head | Correct | Event |
 | **Interactive Language** | 2022 | [Interactive Language: Talking to Robots in Real Time](https://doi.org/10.1109/LRA.2023.3295255) | RA-L 2023 | Action | Language | Correct | Periodic |
-| **Plan corrections (Sharma et al.)** | 2022 | [Correcting Robot Plans with Natural Language Feedback](https://doi.org/10.15607/RSS.2022.XVIII.065) | RSS 2022 | Objective | Language | Correct | Event |
+| **Plan corrections (Sharma et al.) †** | 2022 | [Correcting Robot Plans with Natural Language Feedback](https://doi.org/10.15607/RSS.2022.XVIII.065) | RSS 2022 | Objective | Language | Correct | Event |
 | **LILAC** | 2023 | [``No, to the Right'': Online Language Corrections for Robotic Manipulation via Shared Autonomy](https://doi.org/10.1145/3568162.3578623) | HRI 2023 | Residual | Language | Correct | Event |
 | **DROC** | 2023 | [Distilling and Retrieving Generalizable Knowledge for Robot Manipulation via Language Corrections](https://doi.org/10.1109/ICRA57147.2024.10610455) | ICRA 2024 | Program | Code | Correct | Event |
 | **ResiP †** | 2024 | [From Imitation to Refinement – Residual RL for Precise Assembly](https://doi.org/10.1109/ICRA55743.2025.11127442) | ICRA 2025 | Residual | -- | Correct | Periodic |
 | **RT-H** | 2024 | [RT-H: Action Hierarchies Using Language](https://doi.org/10.15607/RSS.2024.XX.049) | RSS 2024 | Skill | Language | Command | Periodic |
 | **TRANSIC †** | 2024 | [TRANSIC: Sim-to-Real Policy Transfer by Learning from Online Correction](https://arxiv.org/abs/2405.10315) | CoRL 2024 | Residual | -- | Correct | Periodic |
 | **YAY Robot** | 2024 | [Yell At Your Robot: Improving On-the-Fly from Language Corrections](https://doi.org/10.15607/RSS.2024.XX.025) | RSS 2024 | Residual | Language | Correct | Event |
-| **ExTraCT** | 2024 | [ExTraCT – Explainable Trajectory Corrections for Language-Based Human-Robot Interaction Using Textual Feature Descriptions](https://doi.org/10.3389/frobt.2024.1345693) | Front. Robot. AI 2024 | Residual | Language | Correct | Event |
+| **ExTraCT †** | 2024 | [ExTraCT – Explainable Trajectory Corrections for Language-Based Human-Robot Interaction Using Textual Feature Descriptions](https://doi.org/10.3389/frobt.2024.1345693) | Front. Robot. AI 2024 | Residual | Language | Correct | Event |
 | **Policy Decorator †** | 2024 | [Policy Decorator: Model-Agnostic Online Refinement for Large Policy Model](https://arxiv.org/abs/2412.13630) | ICLR 2025 | Residual | -- | Correct | Periodic |
 | **Hi Robot** | 2025 | [Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](https://arxiv.org/abs/2502.19417) | ICML 2025 | Task | Language | Command | Periodic |
 | **PLD †** | 2025 | [Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](https://arxiv.org/abs/2511.00091) | ICLR 2026 | Residual | Action head | Correct | Periodic |
@@ -214,7 +214,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **DrEureka** | 2024 | [DrEureka: Language Model Guided Sim-To-Real Transfer](https://doi.org/10.15607/RSS.2024.XX.094) | RSS 2024 | Objective | Code | Specify | Offline |
 | **RL-VLM-F** | 2024 | [RL-VLM-F: Reinforcement Learning from Vision Language Foundation Model Feedback](https://arxiv.org/abs/2402.03681) | ICML 2024 | Objective | Language | Verify | Periodic |
 | **VLMPC** | 2024 | [VLMPC: Vision-Language Model Predictive Control for Robotic Manipulation](https://doi.org/10.15607/RSS.2024.XX.106) | RSS 2024 | Score | Language | Propose | Periodic |
-| **V-JEPA 2 †** | 2025 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | arXiv 2025 | Prediction | Latent | Predict | Periodic |
+| **V-JEPA 2-AC †** | 2025 | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | arXiv 2025 | Prediction | Latent | Predict | Periodic |
 | **WorldVLA** | 2025 | [WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539) | arXiv 2025 | Action | Action tokens | Command | Periodic |
 | **Ctrl-World †** | 2025 | [Ctrl-World: A Controllable Generative World Model for Robot Manipulation](https://arxiv.org/abs/2510.10125) | ICLR 2026 | Prediction | Images | Predict | Offline |
 | **DreamGen †** | 2025 | [DreamGen: Unlocking Generalization in Robot Learning through Video World Models](https://arxiv.org/abs/2505.12705) | CoRL 2025 | Prediction | Images | Predict | Offline |
@@ -280,7 +280,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **Fast-in-Slow** | 2025 | [Fast-in-Slow: A Dual-System VLA Model Unifying Fast Manipulation within Slow Reasoning](https://arxiv.org/abs/2506.01953) | NeurIPS 2025 | Action | Latent | Command | Periodic |
 | **Helix** | 2025 | [Helix: A Vision-Language-Action Model for Generalist Humanoid Control](https://www.figure.ai/news/helix) | Blog 2025 | Action | Action head | Command | Periodic |
 | **Gemini Robotics** | 2025 | [Gemini Robotics: Bringing AI into the Physical World](https://arxiv.org/abs/2503.20020) | arXiv 2025 | Program | Code | Command | Per step |
-| **Gemini Robotics 1.5** | 2025 | [Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer](https://arxiv.org/abs/2510.03342) | arXiv 2025 | Task | Language | Command | Per subtask |
+| **Gemini Robotics 1.5 (orchestrator)** | 2025 | [Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer](https://arxiv.org/abs/2510.03342) | arXiv 2025 | Task | Language | Command | Per subtask |
 | **ThinkAct** | 2025 | [ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](https://arxiv.org/abs/2507.16815) | NeurIPS 2025 | Latent | Latent | Command | Periodic |
 | **G0** | 2025 | [Galaxea Open-World Dataset and G0 Dual-System VLA Model](https://arxiv.org/abs/2509.00576) | arXiv 2025 | Task | Language | Command | Two rates |
 | **HAMSTER** | 2025 | [HAMSTER: Hierarchical Action Models for Open-World Robot Manipulation](https://arxiv.org/abs/2502.05485) | ICLR 2025 | Motion | Structured | Command | Once |
