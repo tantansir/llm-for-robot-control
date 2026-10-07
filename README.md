@@ -92,7 +92,7 @@ Codes: **Level/role** is the abstraction level of the emitted variable for comma
 | **Code-as-Monitor** | 2024 | [Code-as-Monitor: Constraint-aware Visual Programming for Reactive and Proactive Robotic Failure Detection](https://arxiv.org/abs/2412.04455) | CVPR 2025 | Program | Code | Monitor | Per subtask |
 | **RAI** | 2025 | [RAI: Flexible Agent Framework for Embodied AI](https://doi.org/10.1007/978-3-032-05925-3_16) | PAAMS Highlights 2025 | Skill | Tool call | Command | Per step |
 | **RHO** | 2026 | [RHO: Your Coding Agent is Secretly a Roboticist](https://arxiv.org/abs/2606.16458) | arXiv 2026 | Program | Code | Command | Offline |
-| **CaP-X** | 2026 | [CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation](https://arxiv.org/abs/2603.22435) | ICML 2026 | Program | Code | Command | Per step |
+| **CaP-X** | 2026 | [CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation](https://proceedings.mlr.press/v306/fu26u.html) | ICML 2026 | Program | Code | Command | Per step |
 | **ALRM (TaP)** | 2026 | [ALRM: Agentic LLM for Robotic Manipulation](https://arxiv.org/abs/2601.19510) | arXiv 2026 | Skill | Tool call | Command | Per step |
 | **BTGenBot-2** | 2026 | [BTGenBot-2: Efficient Behavior Tree Generation with Small Language Models](https://arxiv.org/abs/2602.01870) | arXiv 2026 | Program | Structured | Command | Event |
 | **Agent as Policy** | 2026 | [Agent as Policy for Robotic Manipulation](https://arxiv.org/abs/2609.12541) | arXiv 2026 | Motion | Tool call | Command | Per step |
